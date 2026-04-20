@@ -22,7 +22,7 @@ function bulbSwitcher(n) {
 // console.log(bulbSwitcher(15));
 // console.log(bulbSwitcher(16));
 // console.log(bulbSwitcher(17));
-// console.log(bulbSwitcher(100));
+console.log(bulbSwitcher(100));
 // console.log(bulbSwitcher(1000));
 // console.log(bulbSwitcher(1000000000));
 // console.log(bulbSwitcher(24));
