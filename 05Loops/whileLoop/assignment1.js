@@ -130,4 +130,69 @@ function printAllOddNumbers(n) {
     }
 }
 
-printAllOddNumbers(100);
+// printAllOddNumbers(100);
+
+// WAP to print all the numbers from 1 to 100 which are divisible by 7.
+
+function printNumbersDivisibleBy7(n) {
+    let i = 1;
+    while (i<=n) {
+        if(i%7 == 0) console.log(i);
+        i++;
+    }
+}
+
+// WAP to print and count all the numbers from 1 to 100 which are divisible by 7.
+function printAndCountNumbersDivisibleBy7(n) {
+    let i = 1;
+    let count = 0;
+    while (i<=n) {
+        if(i%7 == 0) {
+            console.log(i);
+            count++;
+        };
+        i++;
+    }
+    console.log(`Count is: ${count}`);
+}
+
+// printAndCountNumbersDivisibleBy7(10);
+
+// WAP to print and count all the numbers from 1 to 100 which are divisible by 7 or ends with 7.
+function printAndCountNumbersDivisibleByOrEndWith7(n) {
+    let i = 1;
+    let count = 0;
+    while (i<=n) {
+        if(i%7 == 0 || i%10 == 7) {
+            console.log(i);
+            count++;
+        };
+        i++;
+    }
+    console.log(`Count is: ${count}`);
+}
+
+// printAndCountNumbersDivisibleByOrEndWith7(100);
+
+// WAP to print and count all the numbers from 1 to 1000 which are divisible by 7 and also ends with 7
+function printAndCountNumbersDivisibleByAndEndWith7(n) {
+    let i = 1;
+    let count = 0;
+    while (i<=n) {
+        if(i%7 == 0 && i%10 == 7) {
+            console.log(i);
+            count++;
+        };
+        i++;
+    }
+    console.log(`Count is: ${count}`);
+}
+// printAndCountNumbersDivisibleByAndEndWith7(100);
+
+// WAP to print all the factors of a number.
+function printAllFactors(n) {
+    let i = 1;
+    while (i<=n) {
+        
+    }
+}
