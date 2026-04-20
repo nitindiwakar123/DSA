@@ -97,3 +97,37 @@ function printAndCountPerfectCube(n) {
 
 // printAndCountPerfectCube(1000);
 
+// WAP to print all the even numbers from 1 to 100.
+// Simple way, n iterations
+function printAllEvenNumbers(n) {
+    let i = 0;
+    while (i<=n) {
+        if((i&1)==0) {
+            console.log(i);
+        }
+        i++;
+    }
+}
+
+// Optimized way n/2 iterations
+function printAllEvenNumbersOptimized(n) {
+    let i = 0;
+    while (i<=n) {
+        console.log(i);
+        i += 2;
+    }
+}
+
+// printAllEvenNumbers(10);
+// printAllEvenNumbersOptimized(10);
+
+// WAP to print all the odd numbers from 1 to 100.
+function printAllOddNumbers(n) {
+    let i = 1;
+    while (i<=n) {
+        console.log(i);
+        i += 2;
+    }
+}
+
+printAllOddNumbers(100);
