@@ -1,4 +1,4 @@
-function bulbSwitcher(n) {
+function onBulbs(n) {
     if(n<0) return -1;
     let i = 1;
     while (i*i <= n) {
