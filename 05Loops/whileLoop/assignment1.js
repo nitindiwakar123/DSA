@@ -3,7 +3,7 @@
 // Print all numbers upto 10
 function printAllNumbersUptoN(n) {
     let i = 1;
-    while (i<=n) {
+    while (i <= n) {
         console.log(i);
         i++;
     }
@@ -14,7 +14,7 @@ function printAllNumbersUptoN(n) {
 // WAP to print all the numbers from n to 1.
 
 function printAllNumbersFromNto1(n) {
-    while (n>=1) {
+    while (n >= 1) {
         console.log(n);
         n--;
     }
@@ -25,8 +25,8 @@ function printAllNumbersFromNto1(n) {
 // WAP to print square of each numbers from 1 to 100.
 function printSquare(n) {
     let i = 1;
-    while (i<=n) {
-        console.log(i*i);
+    while (i <= n) {
+        console.log(i * i);
         i++;
     }
 }
@@ -37,8 +37,8 @@ function printSquare(n) {
 
 function printPerfectSquare(n) {
     let i = 1;
-    while (i*i<=n) {
-        console.log(i*i);
+    while (i * i <= n) {
+        console.log(i * i);
         i++;
     }
 }
@@ -50,8 +50,8 @@ function printPerfectSquare(n) {
 function printAndCountPerfectSquare(n) {
     let i = 1;
     let count = 0;
-    while (i*i<=n) {
-        console.log(i*i);
+    while (i * i <= n) {
+        console.log(i * i);
         count++;
         i++;
     }
@@ -64,8 +64,8 @@ function printAndCountPerfectSquare(n) {
 // WAP to print cube of each numbers from 1 to 100.
 function printCubeOfEach(n) {
     let i = 1;
-    while (i<=n) {
-        console.log(i*i*i);
+    while (i <= n) {
+        console.log(i * i * i);
         i++;
     }
 }
@@ -75,8 +75,8 @@ function printCubeOfEach(n) {
 // WAP to print all the numbers from 1 to 100 which are perfect cube.
 function printPerfectCube(n) {
     let i = 1;
-    while (i**3<=n) {
-        console.log(i**3); // i**3 = i*i*i
+    while (i ** 3 <= n) {
+        console.log(i ** 3); // i**3 = i*i*i
         i++;
     }
 }
@@ -87,8 +87,8 @@ function printPerfectCube(n) {
 function printAndCountPerfectCube(n) {
     let i = 1;
     let count = 0;
-    while (i**3<=n) {
-        console.log(i**3); // i**3 = i*i*i
+    while (i ** 3 <= n) {
+        console.log(i ** 3); // i**3 = i*i*i
         count++;
         i++;
     }
@@ -101,8 +101,8 @@ function printAndCountPerfectCube(n) {
 // Simple way, n iterations
 function printAllEvenNumbers(n) {
     let i = 0;
-    while (i<=n) {
-        if((i&1)==0) {
+    while (i <= n) {
+        if ((i & 1) == 0) {
             console.log(i);
         }
         i++;
@@ -112,7 +112,7 @@ function printAllEvenNumbers(n) {
 // Optimized way n/2 iterations
 function printAllEvenNumbersOptimized(n) {
     let i = 0;
-    while (i<=n) {
+    while (i <= n) {
         console.log(i);
         i += 2;
     }
@@ -124,7 +124,7 @@ function printAllEvenNumbersOptimized(n) {
 // WAP to print all the odd numbers from 1 to 100.
 function printAllOddNumbers(n) {
     let i = 1;
-    while (i<=n) {
+    while (i <= n) {
         console.log(i);
         i += 2;
     }
@@ -136,8 +136,8 @@ function printAllOddNumbers(n) {
 
 function printNumbersDivisibleBy7(n) {
     let i = 1;
-    while (i<=n) {
-        if(i%7 == 0) console.log(i);
+    while (i <= n) {
+        if (i % 7 == 0) console.log(i);
         i++;
     }
 }
@@ -146,8 +146,8 @@ function printNumbersDivisibleBy7(n) {
 function printAndCountNumbersDivisibleBy7(n) {
     let i = 1;
     let count = 0;
-    while (i<=n) {
-        if(i%7 == 0) {
+    while (i <= n) {
+        if (i % 7 == 0) {
             console.log(i);
             count++;
         };
@@ -162,8 +162,8 @@ function printAndCountNumbersDivisibleBy7(n) {
 function printAndCountNumbersDivisibleByOrEndWith7(n) {
     let i = 1;
     let count = 0;
-    while (i<=n) {
-        if(i%7 == 0 || i%10 == 7) {
+    while (i <= n) {
+        if (i % 7 == 0 || i % 10 == 7) {
             console.log(i);
             count++;
         };
@@ -178,8 +178,8 @@ function printAndCountNumbersDivisibleByOrEndWith7(n) {
 function printAndCountNumbersDivisibleByAndEndWith7(n) {
     let i = 1;
     let count = 0;
-    while (i<=n) {
-        if(i%7 == 0 && i%10 == 7) {
+    while (i <= n) {
+        if (i % 7 == 0 && i % 10 == 7) {
             console.log(i);
             count++;
         };
@@ -192,7 +192,55 @@ function printAndCountNumbersDivisibleByAndEndWith7(n) {
 // WAP to print all the factors of a number.
 function printAllFactors(n) {
     let i = 1;
-    while (i<=n) {
-        
+    while (i <= n) {
+        if (n % i == 0) console.log(i);
+        i++;
     }
 }
+
+// printAllFactors(28);
+
+// WAP to count the factors of a number.
+function countFactors(n) {
+    let i = 1;
+    let count = 0;
+
+    while (i <= n) {
+        if (n % i == 0) count++;
+        i++;
+    }
+    return count;
+}
+
+// console.log(countFactors(5));
+
+
+// WAP to print and count all the factors of a number.
+function printAndCountFactors(n) {
+    let i = 1;
+    let count = 0;
+
+    while (i <= n) {
+        if (n % i == 0) {
+            console.log(i);
+            count++;
+        };
+        i++;
+    }
+    console.log(`Count is: ${count}`);
+}
+// printAndCountFactors(10);
+
+// WAP to print a number is a prime number or not.
+function isPrimeNumber(n) {
+    let i = 1;
+    let count = 0;
+    
+    while (i<=n) {
+        if(n%i==0) count++;
+        i++;
+    }
+
+    return count==2;
+}
+// console.log(isPrimeNumber(5));
