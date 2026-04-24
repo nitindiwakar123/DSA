@@ -84,8 +84,8 @@ function printSumOfAllEvenSquares(n) {
     let i = 2;
     let sum = 0;
 
-    while(i<=n) {
-        sum += i**2;
+    while (i <= n) {
+        sum += i ** 2;
         i += 2;
     }
     console.log(`Sum of even numbers is: ${sum}`);
@@ -97,11 +97,55 @@ function printSumOfAllEvenCubes(n) {
     let i = 2;
     let sum = 0;
 
-    while(i<=n) {
-        sum += i**3;
+    while (i <= n) {
+        sum += i ** 3;
         i += 2;
     }
     console.log(`Sum of even numbers cubes is: ${sum}`);
 }
 
 // printSumOfAllEvenCubes(100);
+
+// WAJP to print sum of squares of all odd numbers from 1 to 100.
+function printSumOfAllOddSquares(n) {
+    let i = 1;
+    let sum = 0;
+    while (i <= n) {
+        sum += i ** 2;
+        i += 2;
+    }
+    console.log(`Sum is ${sum}`);
+}
+
+// printSumOfAllOddSquares(10);
+
+// WAJP to print sum of cubes of all odd numbers from 1 to 100.
+function printSumOfAllOddCubes(n) {
+    let i = 1;
+    let sum = 0;
+    while (i <= n) {
+        sum += i ** 3;
+        i += 2;
+    }
+    console.log(`Sum is ${sum}`);
+}
+
+// printSumOfAllOddCubes(10);
+
+// WAJP to print the sum of below series:
+// 𝟏 ∗ 𝟐 + 𝟐 ∗ 𝟑 + 𝟑 ∗ 𝟒 … … 𝒖𝒑𝒕𝒐 𝟏𝟎0
+
+function printSum(n) {
+    let i = 1;
+    let sum = 0;
+
+    while (i <= n) {
+        sum += i*(i+1);
+        console.log({sum, i});
+        
+        i++;
+    }
+    console.log(`Sum is: ${sum}`);
+}
+
+// printSum(10);
