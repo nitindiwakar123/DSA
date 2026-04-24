@@ -149,3 +149,43 @@ function printSum(n) {
 }
 
 // printSum(10);
+
+// WAJP to print the sum of below series:  
+
+// Q-11
+// function printSumOfSeries(n) {
+//     let i = 1;
+//     let sum = 0;
+
+//     while (i <= n) {
+//         sum += i*((i+1)**2);
+//         i++;
+//     }
+//     console.log(`Sum is: ${sum}`);
+// }
+
+// Q-12
+// function printSumOfSeries(n) {
+//     let i = 1;
+//     let sum = 0;
+
+//     while (i <= n) {
+//         sum += (i**2)*(i+1);
+//         i++;
+//     }
+//     console.log(`Sum is: ${sum}`);
+// }
+
+// Q-13
+function printSumOfSeries(n) {
+    let i = 1;
+    let sum = 0;
+
+    while (i <= n) {
+        sum += Math.floor(1/i);
+        i++;
+    }
+    console.log(`Sum is: ${sum}`);
+}
+
+printSumOfSeries(10);
