@@ -212,8 +212,7 @@ function countFactors(n) {
     return count;
 }
 
-// console.log(countFactors(5));
-
+console.log(countFactors(5));
 
 // WAP to print and count all the factors of a number.
 function printAndCountFactors(n) {
