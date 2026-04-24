@@ -1,5 +1,4 @@
 // WAJP to print sum of all natural numbers from 1 to 100.
-
 function printNumbers(n) {
     let i = 1;
     while (i <= n) {
@@ -9,6 +8,7 @@ function printNumbers(n) {
 }
 // printNumbers(100);
 
+// WAJP to print sum of all even numbers from 1 to 100.
 function printSumOfEven(n) {
     let i = 1;
     let sum = 0;
@@ -68,6 +68,40 @@ function printCubes(n) {
 // printCubes(100);
 
 // WAJP to print sum of squares of all even numbers from 1 to 100.
-function printAll() {
+// function printSumOfAllEvenSquares(n) {
+//     let i = 1;
+//     let sum = 0;
 
+//     while(i<=n) {
+//         if((i&1) == 0) sum += i**2;
+//         i++;
+//     }
+//     console.log(`Sum of even numbers is: ${sum}`);
+// }
+
+// way 2
+function printSumOfAllEvenSquares(n) {
+    let i = 2;
+    let sum = 0;
+
+    while(i<=n) {
+        sum += i**2;
+        i += 2;
+    }
+    console.log(`Sum of even numbers is: ${sum}`);
 }
+// printSumOfAllEvenSquares(10);
+
+// WAJP to print sum of cubes of all even numbers from 1 to 100.
+function printSumOfAllEvenCubes(n) {
+    let i = 2;
+    let sum = 0;
+
+    while(i<=n) {
+        sum += i**3;
+        i += 2;
+    }
+    console.log(`Sum of even numbers cubes is: ${sum}`);
+}
+
+// printSumOfAllEvenCubes(100);
