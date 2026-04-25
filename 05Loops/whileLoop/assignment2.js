@@ -257,8 +257,28 @@ function printFactorial(n) {
         n--;
     }
 
-    console.log("Factorial is: ", BigInt(factorial));
-    
+    console.log("Factorial is: ", BigInt(factorial)); 
 }
 
-printFactorial(22);
+// printFactorial(22);
+
+// WAJP to accept two numbers from user and print power of a to b.
+// function printPower(a, b) {
+//     let power = 1;
+//     while (b>0) {
+//         power *= a;
+//         b--;
+//     }
+
+//     console.log(power);
+// }
+
+// function printPower(a, b) {
+//     console.log(a**b);
+// }
+
+// function printPower(a, b) {
+//     console.log(Math.pow(a, b));
+// }
+
+// printPower(6, 3);
