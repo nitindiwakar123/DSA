@@ -249,18 +249,25 @@ function printSum(n) {
 // printSumOfSeries(10);
 
 // WAJP to accept a input from user and print factorial of that number.
-function printFactorial(n) {
-    let factorial = n;
-    n = n - 1;
-    while (n>1) {
-        factorial *= n;
-        n--;
-    }
+// function printFactorial(n) {
+//     let factorial = n;
+//     n = n - 1;
+//     while (n>1) {
+//         factorial *= n;
+//         n--;
+//     }
 
-    console.log("Factorial is: ", BigInt(factorial)); 
-}
+//     console.log("Factorial is: ", BigInt(factorial)); 
+// }
 
-// printFactorial(22);
+// printFactorial(0);
+
+// function getFactorial(n) {
+//     return n>1? n * getFactorial(n-1): 1;
+// }
+
+// const getFactorial = n => n>1? n * getFactorial(n-1): 1;
+// console.log(getFactorial(11));
 
 // WAJP to accept two numbers from user and print power of a to b.
 // function printPower(a, b) {
