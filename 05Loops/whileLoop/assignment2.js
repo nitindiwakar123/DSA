@@ -177,15 +177,88 @@ function printSum(n) {
 // }
 
 // Q-13
-function printSumOfSeries(n) {
-    let i = 1;
-    let sum = 0;
+// 1/1+1/2+1/3+1/4.....1/n
+// function printSumOfSeries(n) {
+//     let i = 1;
+//     let sum = 0;
 
-    while (i <= n) {
-        sum += Math.floor(1/i);
-        i++;
+//     while (i <= n) {
+//         sum += Math.floor(1/i);
+//         i++;
+//     }
+//     console.log(`Sum is: ${sum}`);
+// }
+
+// Even
+// function printSumOfSeries(n) {
+//     let i = 2;
+//     let sum = 0;
+
+//     while (i <= n) {
+//         sum += Math.floor(1/i);
+//         i += 2;
+//     }
+//     console.log(`Sum is: ${sum}`);
+// }
+
+// Odd
+// function printSumOfSeries(n) {
+//     let i = 1;
+//     let sum = 0;
+
+//     while (i <= n) {
+//         sum += Math.floor(1/i);
+//         i += 2;
+//     }
+//     console.log(`Sum is: ${sum}`);
+// }
+
+// function printSumOfSeries(n) {
+//     let i = 1;
+//     let sum = 0;
+
+//     while (i <= n) {
+//         sum += Math.floor(1/(i**2));
+//         i++;
+//     }
+//     console.log(`Sum is: ${sum}`);
+// }
+
+// function printSumOfSeries(n) {
+//     let i = 1;
+//     let sum = 0;
+
+//     while (i <= n) {
+//         sum += Math.floor(1/(i**3));
+//         i++;
+//     }
+//     console.log(`Sum is: ${sum}`);
+// }
+
+// function printSumOfSeries(n) {
+//     let i = 1;
+//     let sum = 0;
+
+//     while (i <= n) {
+//         sum += Math.floor(1/(i*i+1));
+//         i++;
+//     }
+//     console.log(`Sum is: ${sum}`);
+// }
+
+// printSumOfSeries(10);
+
+// WAJP to accept a input from user and print factorial of that number.
+function printFactorial(n) {
+    let factorial = n;
+    n = n - 1;
+    while (n>1) {
+        factorial *= n;
+        n--;
     }
-    console.log(`Sum is: ${sum}`);
+
+    console.log("Factorial is: ", BigInt(factorial));
+    
 }
 
-printSumOfSeries(10);
+printFactorial(22);
