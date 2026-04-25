@@ -1,5 +1,6 @@
-let x = 1;
-// console.log(x--); 
-console.log(x); 
-// console.log(x);
-
+let a = 5;
+let b = 10;
+a = b++ + b--;
+// b = a;
+console.log(a);
+// console.log(b);
