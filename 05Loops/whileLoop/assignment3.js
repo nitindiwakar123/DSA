@@ -56,8 +56,8 @@ function printBiggestDigit(n) {
 
 // Write a program to take a user input and print the difference of biggest digit and smallest digit of the number.
 function printDifference(n) {
-    let big = n%10;
-    let small = n%10;
+    let big = n % 10;
+    let small = n % 10;
 
     while (n > 0) {
         let rem = n % 10;
@@ -71,6 +71,90 @@ function printDifference(n) {
 
     console.log(`Difference is: ${big - small}`);
 }
-// printDifference(587);
+// printDifference(42375);
 
+// Write a java program to take a user input and count the total digit of the number.
+// function countDigits(n) {
+//     let count = 0;
+//     while (n > 0) {
+//         count++;
+//         n = Math.floor(n / 10);
+//     }
 
+//     return count;
+// }
+
+// console.log(countDigits(456434545));
+
+// Write a java program to take a user input and count how many 0 digit is in number.
+function countZeroDigits(n) {
+    let count = 0;
+    while (n > 0) {
+        if((n%10) == 0) count++
+        n = Math.floor(n / 10);
+    }
+
+    return count;
+}
+// console.log(countZeroDigits(2000));
+
+// Write a java program to take a user input and count how many 3 has appeared in the number.
+function countThreeDigits(n) {
+    let count = 0;
+    while (n > 0) {
+        if((n%10) == 3) count++
+        n = Math.floor(n / 10);
+    }
+
+    return count;
+}
+// console.log(countThreeDigits(133213));
+
+// Write a java program to take a user input and count the even digits of the number.
+function countEvenDigits(n) {
+    let count = 0;
+    while (n > 0) {
+        if((n%10 & 1) == 0) count++
+        n = Math.floor(n / 10);
+    }
+
+    return count;
+}
+
+// console.log(countEvenDigits(435465463));
+
+// Write a java program to take a user input and count the odd digits of the number.
+function countOddDigits(n) {
+    let count = 0;
+    while (n > 0) {
+        if((n%10 & 1) == 1) count++
+        n = Math.floor(n / 10);
+    }
+
+    return count;
+}
+
+// console.log(countOddDigits(42765));
+
+// Write a java program to take a user input and count all the digits of the number which are less than or equals to 5.
+function countDigits(n) {
+    let count = 0;
+    while (n > 0) {
+        if((n%10) <= 5) count++
+        n = Math.floor(n / 10);
+    }
+
+    return count;
+}
+// console.log(countDigits(435328495));
+
+// Write a java program to take a user input and print the sum of each digit of the number.
+function printSumOfDigits(n) {
+    let sum = 0;
+    while (n > 0) {
+        sum += n%10;
+        n = Math.floor(n / 10);
+    }
+    console.log("Sum is: ", sum);
+}
+printSumOfDigits(23);
