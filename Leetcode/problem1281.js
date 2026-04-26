@@ -44,3 +44,8 @@ function getSubtract(n) {
 
 // Squares
 // console.log(getSubtract(2468)); //364
+
+// Patterns
+// If all digits are 1 → result is negative
+// If digits are large → product grows faster than sum
+// If contains 0 → always negative (except n=0)

@@ -90,7 +90,7 @@ function printDifference(n) {
 function countZeroDigits(n) {
     let count = 0;
     while (n > 0) {
-        if((n%10) == 0) count++
+        if ((n % 10) == 0) count++
         n = Math.floor(n / 10);
     }
 
@@ -102,7 +102,7 @@ function countZeroDigits(n) {
 function countThreeDigits(n) {
     let count = 0;
     while (n > 0) {
-        if((n%10) == 3) count++
+        if ((n % 10) == 3) count++
         n = Math.floor(n / 10);
     }
 
@@ -114,7 +114,7 @@ function countThreeDigits(n) {
 function countEvenDigits(n) {
     let count = 0;
     while (n > 0) {
-        if((n%10 & 1) == 0) count++
+        if ((n % 10 & 1) == 0) count++
         n = Math.floor(n / 10);
     }
 
@@ -127,7 +127,7 @@ function countEvenDigits(n) {
 function countOddDigits(n) {
     let count = 0;
     while (n > 0) {
-        if((n%10 & 1) == 1) count++
+        if ((n % 10 & 1) == 1) count++
         n = Math.floor(n / 10);
     }
 
@@ -140,7 +140,7 @@ function countOddDigits(n) {
 function countDigits(n) {
     let count = 0;
     while (n > 0) {
-        if((n%10) <= 5) count++
+        if ((n % 10) <= 5) count++
         n = Math.floor(n / 10);
     }
 
@@ -149,12 +149,49 @@ function countDigits(n) {
 // console.log(countDigits(435328495));
 
 // Write a java program to take a user input and print the sum of each digit of the number.
-function printSumOfDigits(n) {
+// function printSumOfDigits(n) {
+//     let sum = 0;
+//     while (n > 0) {
+//         sum += n % 10;
+//         n = Math.floor(n / 10);
+//     }
+//     console.log("Sum is: ", sum);
+// }
+// printSumOfDigits(23);
+
+// Write a java program to take a user input and print the sum of each even digits of the number.
+function printSumOfEvenDigits(n) {
     let sum = 0;
     while (n > 0) {
-        sum += n%10;
+        const rem = n % 10;
+        if((rem&1) == 0) sum += rem;
         n = Math.floor(n / 10);
     }
     console.log("Sum is: ", sum);
 }
-printSumOfDigits(23);
+
+// printSumOfEvenDigits(42765);
+
+// Write a java program to take a user input and print the sum of each odd digits of the number.
+function printSumOfOddDigits(n) {
+    let sum = 0;
+    while (n > 0) {
+        const rem = n % 10;
+        if((rem&1) == 1) sum += rem;
+        n = Math.floor(n / 10);
+    }
+    console.log("Sum is: ", sum);
+}
+
+// printSumOfOddDigits(42763);
+
+function printSumOfDigits(n) {
+    let sum = 0;
+    while (n > 0) {
+        const rem = n % 10;
+        if(rem <= 5) sum += rem;
+        n = Math.floor(n / 10);
+    }
+    console.log("Sum is: ", sum);
+}
+// printSumOfDigits(73874);
