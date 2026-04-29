@@ -1,7 +1,14 @@
-// function getDigit(n) {
-//     let smallest = getDigit(Math.floor(n/10));
-//     let rem = n%10;
-//     return n>0? (rem < smallest?rem: smallest): n;
-// }
+function kthFactor(n, k) {
+    let i = 1;
+    let count = 0;
+    while (i<=n) {
+        if((n%i) == 0) {
+            count++;
+            if(count==k) return i;
+        }
+        i++;
+    }
+    return -1;
+}
 
-// console.log(getDigit(345));
+console.log(kthFactor(12, 5));
