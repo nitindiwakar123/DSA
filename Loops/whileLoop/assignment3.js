@@ -208,4 +208,18 @@ function addDigits(num) {
     return num;
 }
 
-console.log(addDigits(38));
+// console.log(addDigits(38));
+
+// Write a java program to take a user input and reverse the number.
+function reverse(n) {
+    let rev = 0;
+    while (n>0) {
+        rev = rev*10+(n%10);
+        n = Math.floor(n/10);
+    }
+    return rev;
+}
+// console.log(reverse(34535));
+
+
+
