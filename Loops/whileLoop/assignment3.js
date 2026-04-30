@@ -30,7 +30,7 @@ function printEachOddDigit(n) {
 
 // printEachOddDigit(546456);
 
-// Write a java program to take a user input and print each digits of the number which are greater than or equals to 5 one by one.
+// Write a program to take a user input and print each digits of the number which are greater than or equals to 5 one by one.
 function printDigit(n) {
     while (n > 0) {
         const rem = Math.floor(n % 10);
@@ -41,7 +41,6 @@ function printDigit(n) {
 // printDigit(546456);
 
 // Write a java program to take a user input and print the biggest digit of the number.
-
 function printBiggestDigit(n) {
     let big = 0;
     while (n > 0) {
@@ -164,7 +163,7 @@ function printSumOfEvenDigits(n) {
     let sum = 0;
     while (n > 0) {
         const rem = n % 10;
-        if((rem&1) == 0) sum += rem;
+        if ((rem & 1) == 0) sum += rem;
         n = Math.floor(n / 10);
     }
     console.log("Sum is: ", sum);
@@ -177,7 +176,7 @@ function printSumOfOddDigits(n) {
     let sum = 0;
     while (n > 0) {
         const rem = n % 10;
-        if((rem&1) == 1) sum += rem;
+        if ((rem & 1) == 1) sum += rem;
         n = Math.floor(n / 10);
     }
     console.log("Sum is: ", sum);
@@ -185,13 +184,28 @@ function printSumOfOddDigits(n) {
 
 // printSumOfOddDigits(42763);
 
+// Write a java program to take a user input and print the sum of each digits of the number which are less than or equals to 5.
 function printSumOfDigits(n) {
     let sum = 0;
     while (n > 0) {
         const rem = n % 10;
-        if(rem <= 5) sum += rem;
+        if (rem <= 5) sum += rem;
         n = Math.floor(n / 10);
     }
     console.log("Sum is: ", sum);
 }
 // printSumOfDigits(73874);
+
+function addDigits(num) {
+    while (num > 9) {
+        let sum = 0;
+        while (num > 0) {
+            sum += (num % 10);
+            num = Math.floor(num / 10);
+        }
+        num = sum;
+    }
+    return num;
+}
+
+console.log(addDigits(38));
