@@ -213,6 +213,7 @@ function addDigits(num) {
 // Write a java program to take a user input and reverse the number.
 function reverse(n) {
     let rev = 0;
+    
     while (n>0) {
         rev = rev*10+(n%10);
         n = Math.floor(n/10);
@@ -221,5 +222,14 @@ function reverse(n) {
 }
 // console.log(reverse(34535));
 
+function printDigitsLtoR(n) {
+    let rev = reverse(n);
+    while (rev>0) {
+        console.log(rev%10);
+        rev = Math.floor(rev/10);
+    }
+}
 
+// printDigitsLtoR(123);
+// printDigitsLtoR(64756);
 
