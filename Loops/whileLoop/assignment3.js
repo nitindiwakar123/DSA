@@ -234,4 +234,4 @@ function printDigitsLtoR(n) {
 // printDigitsLtoR(123);
 // printDigitsLtoR(64756);
 
-// Write a java program to take a String input and check whether the given String is a palindrome String or not.
+
