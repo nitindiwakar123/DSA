@@ -222,6 +222,7 @@ function reverse(n) {
 }
 // console.log(reverse(34535));
 
+// Write a java program to take a user input and print each digit of the number from left to right.
 function printDigitsLtoR(n) {
     let rev = reverse(n);
     while (rev>0) {
@@ -233,3 +234,4 @@ function printDigitsLtoR(n) {
 // printDigitsLtoR(123);
 // printDigitsLtoR(64756);
 
+// Write a java program to take a String input and check whether the given String is a palindrome String or not.
