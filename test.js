@@ -1,14 +1,11 @@
-function kthFactor(n, k) {
-    let i = 1;
-    let count = 0;
-    while (i<=n) {
-        if((n%i) == 0) {
-            count++;
-            if(count==k) return i;
-        }
-        i++;
+function printPower(a, b) {
+    let power = 1;
+    while (b>0) {
+        power *= a;
+        b--;
     }
-    return -1;
+
+    console.log(power);
 }
 
-console.log(kthFactor(12, 5));
+printPower(5, 3);

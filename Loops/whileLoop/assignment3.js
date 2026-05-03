@@ -234,4 +234,16 @@ function printDigitsLtoR(n) {
 // printDigitsLtoR(123);
 // printDigitsLtoR(64756);
 
+function decimalToBinary(n) {
+    let mul = 1;
+    let bin = 0;
 
+    while (n>0) {
+        bin = (n%2)*mul+bin;
+        mul *= 10;
+        n = Math.floor(n/2)
+    }
+    return bin;
+}
+
+console.log(decimalToBinary(15));
