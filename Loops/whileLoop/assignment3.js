@@ -234,6 +234,7 @@ function printDigitsLtoR(n) {
 // printDigitsLtoR(123);
 // printDigitsLtoR(64756);
 
+// WAP to convert a positive number into binary form.
 function decimalToBinary(n) {
     let mul = 1;
     let bin = 0;
@@ -246,4 +247,35 @@ function decimalToBinary(n) {
     return bin;
 }
 
-console.log(decimalToBinary(15));
+// console.log(decimalToBinary(15));
+
+// WAJP to take binary input and print its decimal representation.
+
+// function binaryToDecimal(n) {
+//     let pow = 0;
+//     let dec = 0;
+//     while (n>0) {
+//         dec += (n%10)*(2**pow);
+//         pow++;
+//         n = Math.floor(n/10);
+//     }
+//     console.log(dec);
+// }
+
+// way 2
+function binaryToDecimal(n) {
+    let dec = 0;
+    let mul = 1;
+
+    while (n>0) {
+        dec = (n%10)*mul+dec;
+        mul = mul * 2;
+        n = Math.floor(n/10);
+    }
+    console.log(dec);
+}
+// binaryToDecimal(1111);
+// binaryToDecimal(11);
+// binaryToDecimal(111);
+// binaryToDecimal(101);
+// binaryToDecimal(110);

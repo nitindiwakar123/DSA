@@ -22,7 +22,7 @@
 
 function trailingZeroes(n) { // Most optimized
     let count = 0;
-    while (n>0) {
+    while (n>4) {
         n = Math.floor(n/5);
         count += n;
     }
