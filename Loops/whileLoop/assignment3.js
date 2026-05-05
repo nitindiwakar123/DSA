@@ -213,10 +213,10 @@ function addDigits(num) {
 // Write a java program to take a user input and reverse the number.
 function reverse(n) {
     let rev = 0;
-    
-    while (n>0) {
-        rev = rev*10+(n%10);
-        n = Math.floor(n/10);
+
+    while (n > 0) {
+        rev = rev * 10 + (n % 10);
+        n = Math.floor(n / 10);
     }
     return rev;
 }
@@ -225,9 +225,9 @@ function reverse(n) {
 // Write a java program to take a user input and print each digit of the number from left to right.
 function printDigitsLtoR(n) {
     let rev = reverse(n);
-    while (rev>0) {
-        console.log(rev%10);
-        rev = Math.floor(rev/10);
+    while (rev > 0) {
+        console.log(rev % 10);
+        rev = Math.floor(rev / 10);
     }
 }
 
@@ -239,10 +239,10 @@ function decimalToBinary(n) {
     let mul = 1;
     let bin = 0;
 
-    while (n>0) {
-        bin = (n%2)*mul+bin;
+    while (n > 0) {
+        bin = (n % 2) * mul + bin;
         mul *= 10;
-        n = Math.floor(n/2)
+        n = Math.floor(n / 2)
     }
     return bin;
 }
@@ -267,10 +267,10 @@ function binaryToDecimal(n) {
     let dec = 0;
     let mul = 1;
 
-    while (n>0) {
-        dec = (n%10)*mul+dec;
+    while (n > 0) {
+        dec = (n % 10) * mul + dec;
         mul = mul * 2;
-        n = Math.floor(n/10);
+        n = Math.floor(n / 10);
     }
     console.log(dec);
 }
@@ -279,3 +279,48 @@ function binaryToDecimal(n) {
 // binaryToDecimal(111);
 // binaryToDecimal(101);
 // binaryToDecimal(110);
+
+// Write a program to take a user input and return true if any two adjacent numbers are not same.
+function isNotSameAdjacentNumbers(n) {
+    let last = n%10;
+    n = Math.floor(n / 10);
+    while (n > 0) {
+        if(last != (n%10)) return true;
+        last = n%10;
+        n = Math.floor(n / 10);
+    }
+    return false;
+}
+
+// console.log(isNotSameAdjacentNumbers(10));
+
+// Write a java program to take a user input and return true if all the digits of the number is in increasing order.
+function isNumberInIncreasingOrder(n) {
+    if(n<10) return false;
+    let last = n%10;
+    n = Math.floor(n / 10);
+    while (n>0) {
+        const current = n%10;
+        if(last<=current) return false;
+        last = current;
+        n = Math.floor(n/10);
+    }
+    return true;
+}
+// console.log(isNumberInIncreasingOrder(1369));
+
+// Write a java program to take a user input and return true if all the digits of the number is in decreasing order.
+function isNumberInDecreasingOrder(n) {
+    if(n<10) return false;
+    let last = n%10;
+    n = Math.floor(n/10);
+    while (n>0) {
+        const current = n%10;     
+        if(last>=current) return false;
+        last = current;
+        n = Math.floor(n/10);
+    }
+    return true;
+}
+
+console.log(isNumberInDecreasingOrder(0));
