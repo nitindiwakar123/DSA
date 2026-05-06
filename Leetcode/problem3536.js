@@ -1,21 +1,38 @@
+// function maxProduct(n) {
+//     let maxProduct = 0;
+
+//     while (n > 0) {
+//         const last = n % 10;
+//         let num = Math.floor(n / 10);
+//         while (num > 0) {
+//             const current = num % 10;
+//             const product = last * current;
+//             if (product > maxProduct) maxProduct = product;
+//             num = Math.floor(num / 10)
+//         }
+//         n = Math.floor(n / 10);
+//     }
+
+//     return maxProduct;
+// }
+
+// way 2
 function maxProduct(n) {
-    let maxProduct = 0;
-
-    while (n > 0) {
-        const last = n % 10;
-        let num = Math.floor(n / 10);
-        while (num > 0) {
-            const current = num % 10;
-            const product = last * current;
-            if (product > maxProduct) maxProduct = product;
-            num = Math.floor(num / 10)
+    let biggest = 0;
+    let secondBiggest = 0;
+    
+    while (n>0) {
+        let digit = n%10;
+        if(digit>biggest) {
+            secondBiggest = biggest;
+            biggest = digit;
+        } else if(digit > secondBiggest) {
+            secondBiggest = digit;
         }
-        n = Math.floor(n / 10);
+        n = Math.floor(n/10);
     }
-
-    return maxProduct;
+    return biggest * secondBiggest;
 }
-
 // Test Cases
 // console.log(maxProduct(0));
 // console.log(maxProduct(1));
@@ -42,3 +59,4 @@ function maxProduct(n) {
 // console.log(maxProduct(123456)); // 30 (6*5)
 
 // console.log(maxProduct(987654)); // 72 (9*8)
+// console.log(maxProduct(945637));
