@@ -1,14 +1,31 @@
+// function twoSum(nums, target) {
+//     if(!nums.length) return [-1, -1];
+//     for (let i = 0; i < nums.length; i++) {
+//         for (let j = i+1; j <= nums.length; j++) {
+//             const sum = nums[i]+nums[j];
+//             if(sum == target) return [i, j]            
+//         }        
+//     }
+
+//     return [-1, -1];
+// }
+
 function twoSum(nums, target) {
     if(!nums.length) return [-1, -1];
     for (let i = 0; i < nums.length; i++) {
-        for (let j = i+1; j <= nums.length; j++) {
-            const sum = nums[i]+nums[j];
-            if(sum == target) return [i, j]            
-        }        
+        for (let j = i+1; j < nums.length; j++) {
+            const res = nums[i]+nums[j];
+            if(res == target) return [i, j]            
+        }
     }
-
+    
     return [-1, -1];
 }
+
+const nums = [1, 23, 2, 5, 7];
+const target = 25;
+
+console.log(twoSum(nums, target));
 
 // Test Cases
 // const nums = [1, 1, 1];
@@ -26,7 +43,3 @@ function twoSum(nums, target) {
 // const nums = [1, 2, 3, 4, 5];
 // const target = 6;
 
-const nums = [5,5,2,11];
-const target = 10;
-
-console.log(twoSum(nums, target));

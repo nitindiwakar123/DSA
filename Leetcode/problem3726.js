@@ -12,6 +12,7 @@
 //     return removeZeroes(res);
 // }
 
+// way 2
 function removeZeroes(n) {
     let res = 0;
     let mul = 1;

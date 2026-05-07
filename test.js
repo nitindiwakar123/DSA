@@ -1,11 +1,6 @@
-function printPower(a, b) {
-    let power = 1;
-    while (b>0) {
-        power *= a;
-        b--;
+function reverse(n) {
+    while (n>0) {
+        
+        n = Math.floor(n/10);
     }
-
-    console.log(power);
 }
-
-printPower(5, 3);
