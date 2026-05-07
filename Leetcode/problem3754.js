@@ -12,7 +12,6 @@ function sumAndMultiply(n) {
         };
         n = Math.floor(n/10);
     }
-
     return x*sum;
 }
 
