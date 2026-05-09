@@ -1,23 +1,18 @@
-// function decimalToOctal(n) {
-//     let mul = 1;
-//     let oct = 0;
-//     while (n>0) {
-//         oct = (n%8)*mul+oct;
-//         mul *= 10;
-//         n = Math.floor(n/8);
-//     }
-//     return oct;
-// }
+function calculateSum(n, k) {
+    let sum = n
+    while (n > 0) {
+        const res = Math.floor(n / k);
+        const rem = n % k;
 
-function decimalToBaseK(n, k) {
-    let mul = 1;
-    let res = 0;
-    while (n>0) {
-        res = (n%k)*mul+res;
-        mul *= 10;
-        n = Math.floor(n/k);
+        console.log({ n, sum, res: Math.floor(n / k) });
+        if (rem != 0) {
+            n = res + rem;
+        } else {
+            n = Math.floor(n / k);
+        }
+        sum += res;
     }
-    return res;
+    return sum;
 }
 
-console.log(decimalToBaseK(120, 5));
+console.log(calculateSum(15, 3));
