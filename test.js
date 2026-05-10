@@ -1,18 +1,20 @@
-function calculateSum(n, k) {
-    let sum = n
-    while (n > 0) {
-        const res = Math.floor(n / k);
-        const rem = n % k;
+function getCommonFactors(aFactors, bFactors) {
+    const commonFactors = [];
+    const usedIndexes = [];
 
-        console.log({ n, sum, res: Math.floor(n / k) });
-        if (rem != 0) {
-            n = res + rem;
-        } else {
-            n = Math.floor(n / k);
+    for (let i = 0; i < aFactors.length; i++) {
+        for (let j = 0; j < bFactors.length; j++) {
+
+            if (
+                aFactors[i] === bFactors[j] &&
+                !usedIndexes.includes(j)
+            ) {
+                commonFactors.push(aFactors[i]);
+                usedIndexes.push(j);
+                break;
+            }
         }
-        sum += res;
     }
-    return sum;
-}
 
-console.log(calculateSum(15, 3));
+    return commonFactors;
+}
