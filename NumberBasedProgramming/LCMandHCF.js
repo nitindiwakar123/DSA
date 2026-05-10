@@ -1,33 +1,4 @@
-function isPrime(n) {
-    for (let i = 2; i <= n / 2; i++) {
-        if (n % i == 0) return false;
-    }
-    return true;
-}
-
-// function nextPrime(n) {
-//     n = n + 1;
-
-//     while (!isPrime(n)) {
-//         n += 1
-//     }
-
-//     return n;
-// }
-
-// Prime Factorization
-// function primeFactorization(n) {
-//     if(n <= 1) return [-1];
-//     const factors = [];
-//     let factor = 2;
-//     while (n > 1) {
-//         if (n % factor == 0) {
-//             factors.push(factor);
-//             n = Math.floor(n / factor);
-//         } else factor = nextPrime(factor)
-//     }
-//     return factors;
-// }
+// Find LCM and HCF from Different Methods
 
 // Prime Factorization - nextPrime is'nt neccessary
 function primeFactorization(n) {
@@ -79,6 +50,7 @@ function primeFactorizationOfTwoNumbers(a, b) {
 // } // small bug
 
 // better
+
 function getCommonFactors(aFactors, bFactors) {
     const commonFactors = [];
     const usedIndexes = [];
@@ -167,7 +139,6 @@ function getLCMandLCFbyDivisonOfThree(a, b, c) {
 // console.log(getLCMandLCFbyDivisonOfThree(120, 256, 478));
 // console.log(getLCMandHCFbyPrimeFactorization(12, 8));
 
-
 // Slower than prime factorization method
 function getLCMbyBruteForceMethod(a, b, c) {
     const biggest = a > b ? (a > c ? a : c) : (b > c ? b : c);
@@ -197,3 +168,35 @@ function getHCFbyBruteForceMethod(a, b, c) {
 console.log(getHCFbyBruteForceMethod(100, 145, 170)); // Slower
 console.log(getHCFbyPrimeFactorization(100, 145)); // Slower - mid
 console.log(getHCFbyDivision(100, 145)); // Fastest
+
+
+// function isPrime(n) {
+//     for (let i = 2; i <= n / 2; i++) {
+//         if (n % i == 0) return false;
+//     }
+//     return true;
+// }
+
+// function nextPrime(n) {
+//     n = n + 1;
+
+//     while (!isPrime(n)) {
+//         n += 1
+//     }
+
+//     return n;
+// }
+
+// Prime Factorization
+// function primeFactorization(n) {
+//     if(n <= 1) return [-1];
+//     const factors = [];
+//     let factor = 2;
+//     while (n > 1) {
+//         if (n % factor == 0) {
+//             factors.push(factor);
+//             n = Math.floor(n / factor);
+//         } else factor = nextPrime(factor)
+//     }
+//     return factors;
+// }
