@@ -1,19 +1,70 @@
-function commonFactors(a, b) {
-    let i = 1;
-    let small = a>b? b: a;
-    let count = 0;
-    while (i<=small) {
-        if(a%i==0 && b%i==0) count++;
-        i++;
-    }
+// function commonFactors(a, b) {
+//     let i = 1;
+//     let small = a>b? b: a;
+//     let count = 0;
+//     while (i<=small) {
+//         if(a%i==0 && b%i==0) count++;
+//         i++;
+//     }
 
+//     return count;
+// }
+
+function getHcf(a, b) {
+    if (a <= 0 && b <= 0) {
+        return undefined;
+    } else if (a == 1 || b == 1) {
+        return 1;
+    };
+    let rem = 1;
+    let dividend = a > b ? a : b;
+    let divisor = a > b ? b : a;
+
+    while (rem > 0) {
+        rem = dividend % divisor;
+        dividend = divisor;
+        divisor = rem;
+    }
+    return dividend;
+}
+
+function commonFactors(a, b) {
+    const hcf = getHcf(a, b);
+    
+    let count = 1;
+    for (let i = 1; i <= hcf/2; i++) {
+        if (hcf%i == 0) {
+            count++;
+        }
+    }
     return count;
 }
+
+console.log(commonFactors(1, 1));
+// console.log(commonFactors(22, 88));
+
+
+// function commonFactors(a, b) {
+//     const smallest = a > b ? b : a;
+//     const biggest = a > b? a: b;
+//     let count = 0;
+
+//     if(biggest%smallest == 0) count++;
+
+//     for (let i = 1; i <= smallest/2; i++) {
+//         if (a % i == 0 && b % i == 0) {
+//             count++;
+//         }
+//     }
+//     return count;
+// }
+
+
 
 // Test Cases
 // console.log(commonFactors(1, 1)); // 1
 // console.log(commonFactors(1, 2)); // 1
-// console.log(commonFactors(2, 4)); // 1
+// console.log(commonFactors(2, 4)); // 2
 
 // console.log(commonFactors(4, 18));
 // console.log(commonFactors(8, 4));
@@ -24,26 +75,26 @@ function commonFactors(a, b) {
 // console.log(commonFactors(100, 2)); // 2
 // console.log(commonFactors(2, 100)); // 2
 
-// Prime Numbers
+// // Prime Numbers
 // console.log(commonFactors(5, 7)); // 1
 // console.log(commonFactors(7, 5)); // 1
 // console.log(commonFactors(11, 13)); // 1
 // console.log(commonFactors(13, 11)); // 1
 
-// Perfect Squares
+// // Perfect Squares
 // console.log(commonFactors(16, 25)); // 1
 // console.log(commonFactors(8, 16)); // 4
 
-// Larger Numbers
+// // Larger Numbers
 // console.log(commonFactors(100, 99));
 // console.log(commonFactors(100, 99));
 // console.log(commonFactors(100, 102));
 
-// Same numbers
+// // Same numbers
 // console.log(commonFactors(6, 6)); // 4 (1,2,3,6)
 // console.log(commonFactors(13, 13)); // 2 (1,13)
 
-// One divides the other
+// // One divides the other
 // console.log(commonFactors(3, 12)); // 2 (1,3)
 // console.log(commonFactors(4, 20)); // 3 (1,2,4)
 // console.log(commonFactors(5, 25)); // 2 (1,5)
