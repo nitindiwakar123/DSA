@@ -1,18 +1,37 @@
-function kthFactor(n, k) {
-    let i = 1;
-    let count = 0;
+// function kthFactor(n, k) {
+//     let i = 1;
+//     let count = 0;
 
-    while (i<=n) {
-        if(n%i==0) {
-            count++;
+//     while (i<=n) {
+//         if(n%i==0) {
+//             count++;
 
-            if(count==k) return i;
+//             if(count==k) return i;
+//         }
+//         i++;
+//     }
+
+//     return -1;
+// }
+
+function getKthFactor(n, k) {
+    if (k > n) return -1;
+    let position = 0;
+    for (let i = 1; i <= n / 2; i++) {
+        if (n % i == 0) {
+            position++;
+            if (position == k) {
+                return i;
+            }
         }
-        i++;
     }
-
+    position++;
+    if (position == k) return n;
+    
     return -1;
 }
+
+console.log(getKthFactor(42, 8))
 
 // Test Cases
 // Edge cases

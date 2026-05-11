@@ -1,20 +1,20 @@
-function getCommonFactors(aFactors, bFactors) {
-    const commonFactors = [];
-    const usedIndexes = [];
-
-    for (let i = 0; i < aFactors.length; i++) {
-        for (let j = 0; j < bFactors.length; j++) {
-
-            if (
-                aFactors[i] === bFactors[j] &&
-                !usedIndexes.includes(j)
-            ) {
-                commonFactors.push(aFactors[i]);
-                usedIndexes.push(j);
-                break;
+console.time();
+function getKthFactor(n, k) {
+    if (k > n) return -1;
+    let position = 0;
+    for (let i = 1; i <= n / 2; i++) {
+        if (n % i == 0) {
+            position++;
+            if (position == k) {
+                return i;
             }
         }
     }
-
-    return commonFactors;
+    position++;
+    if (position == k) return n;
+    
+    return -1;
 }
+
+console.log(getKthFactor(42, 8));
+console.timeEnd();

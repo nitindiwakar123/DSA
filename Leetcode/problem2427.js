@@ -10,6 +10,27 @@
 //     return count;
 // }
 
+// console.log(commonFactors(1, 1));
+// console.log(commonFactors(22, 88));
+
+
+// function commonFactors(a, b) {
+//     const smallest = a > b ? b : a;
+//     const biggest = a > b? a: b;
+//     let count = 0;
+
+//     if(biggest%smallest == 0) count++;
+
+//     for (let i = 1; i <= smallest/2; i++) {
+//         if (a % i == 0 && b % i == 0) {
+//             count++;
+//         }
+//     }
+//     return count;
+// }
+
+
+// Most Optimized Solution
 function getHcf(a, b) {
     if (a <= 0 && b <= 0) {
         return undefined;
@@ -39,27 +60,6 @@ function commonFactors(a, b) {
     }
     return count;
 }
-
-console.log(commonFactors(1, 1));
-// console.log(commonFactors(22, 88));
-
-
-// function commonFactors(a, b) {
-//     const smallest = a > b ? b : a;
-//     const biggest = a > b? a: b;
-//     let count = 0;
-
-//     if(biggest%smallest == 0) count++;
-
-//     for (let i = 1; i <= smallest/2; i++) {
-//         if (a % i == 0 && b % i == 0) {
-//             count++;
-//         }
-//     }
-//     return count;
-// }
-
-
 
 // Test Cases
 // console.log(commonFactors(1, 1)); // 1
