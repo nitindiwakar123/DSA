@@ -27,10 +27,6 @@ function isPrime(n) {
 
 // console.log(isPrime(43));
 
-function getCount(params) {
-    
-}
-
 function printAndCountAllPrimesInRange(start, end) {
     let count = 0;
     for (let i = start; i <= end; i++) {
@@ -65,3 +61,27 @@ function getKthPrime(k) {
 // console.log(getKthPrime(3));
 // console.log(getKthPrime(4));
 // console.log(getKthPrime(5));
+
+function getDigitSum(n) {
+    let sum = 0;
+    while (n>0) {
+        sum += (n%10);
+        n = Math.floor(n/10);
+    }
+    return sum;
+}
+
+function printAndCountPrimes(start, end) {
+    let count = 0;
+    for (let i = start; i <= end; i++) {
+        // console.log({start, end, count, i, "i <= end": i <= end, "sPrime(i) && isPrime(getDigitSum(i))": isPrime(i) && isPrime(getDigitSum(i))});
+        
+        if(isPrime(i) && isPrime(getDigitSum(i))) {
+            console.log(i);
+            count++;
+        }        
+    }
+    console.log("Count: ", count);
+}
+
+// console.log(printAndCountPrimes(1, 15));
