@@ -411,3 +411,67 @@ function printAndCountStrongNumbers(n) {
 
 // printAndCountStrongNumbers(1000);
 
+// WAJP to take user input and print whether the number is an Armstrong number or not.
+
+function getDigitCount(n) {
+    let count = 0;
+    while (n>0) {
+        count++;
+        n = Math.floor(n/10);
+    }
+    return count;
+}
+
+function getPower(a, b) {
+    let pow = 1;
+    while (b > 0) {
+        pow *= a;
+        b--;
+    }
+    return pow;
+}
+
+function isArmstrong1(n) {
+    let sum = 0;
+    let num = n;
+    const digits = getDigitCount(n);
+    while (n>0) {
+        sum += getPower(n%10, digits);
+        n = Math.floor(n/10);
+    }
+    return num == sum;
+}
+
+function isArmstrong(n) {
+    let sum = 0;
+    let num = n;
+    const digits = getDigitCount(n);
+    while (n>0) {
+        sum += (n%10)**digits;
+        n = Math.floor(n/10);
+    }
+    return num == sum;
+}
+
+// console.log(isArmstrong(0));
+// console.log(isArmstrong(1));
+// console.log(isArmstrong(9));
+// console.log(isArmstrong(10));
+// console.log(isArmstrong(120));
+// console.log(isArmstrong(153));
+// console.log(isArmstrong(370));
+
+// WAJP to print and count all the Armstrong numbers up to 100.
+function printAndCountArmstrongNumbers(n) {
+    let count = 0;
+    for (let i = 0; i<=n; i++) {
+        if(isArmstrong(i)) {
+            count++;
+            console.log(i);
+        }
+    }
+    console.log("Count: ", count);
+}
+
+// printAndCountArmstrongNumbers(10000);
+
