@@ -93,7 +93,7 @@ function isPerfectNumber(num) {
 
 function printAndCountPerfectNumbersInRange1(start, end) {
     let count = 0;
-    for (let i = start; i<=end; i++) {
+    for (let i = start; i <= end; i++) {
         if (isPerfectNumber(i)) {
             console.log(i);
             count++;
@@ -140,10 +140,10 @@ function printKthPerfectNumber(k) {
 
 function printKthPerfectNumber1(k) {
     let count = 0;
-    for (let i = 1;i<10000;i++) {
-        if(isPerfectNumber(i)) {
+    for (let i = 1; i < 10000; i++) {
+        if (isPerfectNumber(i)) {
             count++;
-            if(count==k) {
+            if (count == k) {
                 console.log(i);
                 break;
             }
@@ -155,18 +155,18 @@ function printKthPerfectNumber1(k) {
 // WAJP to take user input and print whether the number is Prime number or not.
 // Worst performance
 function isPrime1(n) {
-    if(n==0 || n==1) return false;
+    if (n == 0 || n == 1) return false;
     for (let i = 2; i < n; i++) {
-        if(n%i == 0) return false;
+        if (n % i == 0) return false;
     }
     return true;
 }
 
 // Better than first one total iteration = n/2
 function isPrime2(n) {
-    if(n==0 || n==1) return false;
-    for (let i = 2; i <= n/2; i++) {
-        if(n%i == 0) return false;
+    if (n == 0 || n == 1) return false;
+    for (let i = 2; i <= n / 2; i++) {
+        if (n % i == 0) return false;
     }
     return true;
 }
@@ -195,13 +195,13 @@ function printAndCountPrimesInRange1(start, end) {
 
 function printAndCountPrimesInRange2(start, end) {
     let count = 0;
-     if (start == 1 || start == 2) {
+    if (start == 1 || start == 2) {
         count++;
         console.log(2);
-     }
+    }
     if (start % 2 == 0)
         start++;
-   
+
     for (let i = start; i <= end; i += 2) {
         if (isPrime(i)) {
             console.log(i);
@@ -256,25 +256,25 @@ function printAlternatePrimes(start, end) {
 // WAJP to print and count all prime numbers in a range where sum of digits is also prime number.
 function sumOfDigits(n) {
     let sum = 0;
-    while (n>0) {
-        sum += (n%10);
-        n = Math.floor(n/10);
+    while (n > 0) {
+        sum += (n % 10);
+        n = Math.floor(n / 10);
     }
     return sum;
 }
 
 function printAndCountPrimes(start, end) {
     let count = 0;
-    if(start == 1 || start == 2) {
+    if (start == 1 || start == 2) {
         count++;
         console.log(2);
         start++;
     }
 
-    if(start % 2 == 0) start++;
+    if (start % 2 == 0) start++;
 
-    for (let i = start; i<=end; i+=2) {
-        if(isPrime(i) && isPrime(sumOfDigits(i))) {
+    for (let i = start; i <= end; i += 2) {
+        if (isPrime(i) && isPrime(sumOfDigits(i))) {
             count++;
             console.log(i);
         }
@@ -288,9 +288,9 @@ function printAndCountPrimes(start, end) {
 function isPalindrome(n) {
     let rev = 0;
     const num = n;
-    while (n>0) {
-        rev = rev*10+(n%10);
-        n = Math.floor(n/10);
+    while (n > 0) {
+        rev = rev * 10 + (n % 10);
+        n = Math.floor(n / 10);
     }
 
     return rev == num;
@@ -301,8 +301,8 @@ function isPalindrome(n) {
 // WAJP to print and count all the palindrome numbers in a given range.
 function printAndCountPalidromeInRange1(start, end) {
     let count = 0;
-    for (let i = start; i<=end; i++) {
-        if(isPalindrome(i)) {
+    for (let i = start; i <= end; i++) {
+        if (isPalindrome(i)) {
             count++;
             console.log(i);
         }
@@ -313,9 +313,9 @@ function printAndCountPalidromeInRange1(start, end) {
 // One small improvement we can skip the numbers with ending zeoroes they are never palindrome except 0.
 function printAndCountPalidromeInRange(start, end) {
     let count = 0;
-    for (let i = start; i<=end; i++) {
-        if(i % 10 === 0 && i !== 0) continue;
-        if(isPalindrome(i)) {
+    for (let i = start; i <= end; i++) {
+        if (i % 10 === 0 && i !== 0) continue;
+        if (isPalindrome(i)) {
             count++;
             console.log(i);
         }
@@ -327,13 +327,13 @@ function printAndCountPalidromeInRange(start, end) {
 
 // WAJP to take user input and print nth palindrome number.
 function printNthPalindrome(n) {
-    if(n<1) return;
+    if (n < 1) return;
     let i = 0;
     let count = 0;
     while (true) {
-        if(isPalindrome(i)) {
+        if (isPalindrome(i)) {
             count++;
-            if(count == n) {
+            if (count == n) {
                 console.log(i);
                 return;
             }
@@ -342,4 +342,72 @@ function printNthPalindrome(n) {
     }
 }
 
-printNthPalindrome(10);
+// printNthPalindrome(10);
+
+// WAJP to print and count all the palindrome numbers in a range which is also a prime number.
+function printAndCountPalindromicPrimesInRange(start, end) {
+    let count = 0;
+    for (let i = start; i <= end; i++) {
+        if (i % 10 === 0 && i !== 0) continue;
+        if (isPalindrome(i) && isPrime(i)) {
+            count++;
+            console.log(i);
+        }
+    }
+    console.log("Count: ", count);
+}
+
+// printAndCountPalindromicPrimesInRange(1, 1000);
+
+// WAJP to take user input and print whether the number is Strong number or not.
+function isStrongNumber1(n) {
+    if (n == 0) return false;
+    let sum = 0;
+    const num = n;
+    while (n > 0) {
+        let rem = n % 10;
+        let factorial = rem;
+        rem -= 1;
+        while (rem > 1) {
+            factorial *= rem;
+            rem--;
+        } 
+        sum += factorial;
+        n = Math.floor(n / 10);
+    }
+    return num == sum;
+}
+
+function isStrongNumber(n) {
+    if (n == 0) return false;
+    const factorial = [1,1,2,6,24,120,720,5040,40320,362880];
+    let sum = 0;
+    const num = n;
+    while (n > 0) {
+        let rem = n % 10;
+        sum += factorial[rem];
+        n = Math.floor(n / 10);
+    }
+    return num == sum;
+}
+
+// console.log(isStrongNumber(0));
+// console.log(isStrongNumber(1));
+// console.log(isStrongNumber(9));
+// console.log(isStrongNumber(145));
+// console.log(isStrongNumber(40585));
+
+// WAJP to print and count all the Strong numbers up to 100.
+function printAndCountStrongNumbers(n) {
+    let count = 0;
+    for (let i = 0; i<=n; i++) {
+        if(isStrongNumber(i)) {
+            count++;
+            console.log(i);
+        }
+    }
+    console.log("Count: ", count);
+}
+
+// printAndCountStrongNumbers(1000);
+
