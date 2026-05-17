@@ -378,6 +378,7 @@ function isStrongNumber1(n) {
     return num == sum;
 }
 
+// Optimized
 function isStrongNumber(n) {
     if (n == 0) return false;
     const factorial = [1,1,2,6,24,120,720,5040,40320,362880];
@@ -474,4 +475,36 @@ function printAndCountArmstrongNumbers(n) {
 }
 
 // printAndCountArmstrongNumbers(10000);
+
+// WAJP to take user input and print whether the number is dissarium number or not.
+function isDissarium(n) {
+    if(n<1) return false;
+    let sum = 0;
+    const num = n;
+    let digits = getDigitCount(n);
+    while (n>0) {
+        // console.log({sum, n, digits, curDigit: n%10, "n%10**digits": (n%10)**digits}); 
+        sum += (n%10)**digits;
+        digits--;
+        n = Math.floor(n/10);
+    }
+    return num == sum;
+}
+
+// console.log(isDissarium(0));
+// console.log(isDissarium(518));
+
+// WAJP to print and count all the dissarium numbers in a range.
+function printAndCountDissariumNumbers(n) {
+    let count = 0;
+    for (let i = 1; i<=n; i++) {
+        if(isDissarium(i)) {
+            count++;
+            console.log(i);
+        }
+    }
+    console.log("Count: ", count);
+}
+
+// printAndCountDissariumNumbers(100);
 
