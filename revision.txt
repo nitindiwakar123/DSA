@@ -1,2 +1,3 @@
-11/05/2026 - problem2427
-14/05/2026 - problem319
+11/05/2026 - problem2427(Common Factors)
+14/05/2026 - problem319(Bulb Switcher)
+22/05/2026 - problem136(Single Number)

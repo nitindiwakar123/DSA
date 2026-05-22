@@ -508,3 +508,32 @@ function printAndCountDissariumNumbers(n) {
 
 // printAndCountDissariumNumbers(100);
 
+// WAJP to print and count all the Happy numbers up to 100
+function isHappy(n) {
+    while (n>9) {
+        let sum = 0;
+        while (n>0) {
+            sum += (n%10)**2;
+            n = Math.floor(n/10);
+        }
+        n = sum;
+    }
+
+    return n == 1 || n == 7;
+}
+
+// console.log(isHappy(19));
+
+// WAJP to print and count all the Happy numbers up to 100.
+function printAndCountHappyNumbers(n) {
+    let count = 0;
+    for (let i = 1; i<=n; i++) {
+        if(isHappy(i)) {
+            count++;
+            console.log(i);
+        }
+    }
+    console.log("Count: ", count);
+}
+
+// printAndCountHappyNumbers(100);
