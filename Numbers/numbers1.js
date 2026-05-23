@@ -537,3 +537,10 @@ function printAndCountHappyNumbers(n) {
 }
 
 // printAndCountHappyNumbers(100);
+
+// WAJP to take user input and print whether the number is Automorphic number or not.
+function isAutomorphicNumber(n) {
+    const digits = getDigitCount(n);
+    return n>0 && n == (n**2)%(10**digits);
+}
+console.log(isAutomorphicNumber(5));
