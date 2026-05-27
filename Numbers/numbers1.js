@@ -371,7 +371,7 @@ function isStrongNumber1(n) {
         while (rem > 1) {
             factorial *= rem;
             rem--;
-        } 
+        }
         sum += factorial;
         n = Math.floor(n / 10);
     }
@@ -381,7 +381,7 @@ function isStrongNumber1(n) {
 // Optimized
 function isStrongNumber(n) {
     if (n == 0) return false;
-    const factorial = [1,1,2,6,24,120,720,5040,40320,362880];
+    const factorial = [1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880];
     let sum = 0;
     const num = n;
     while (n > 0) {
@@ -401,8 +401,8 @@ function isStrongNumber(n) {
 // WAJP to print and count all the Strong numbers up to 100.
 function printAndCountStrongNumbers(n) {
     let count = 0;
-    for (let i = 0; i<=n; i++) {
-        if(isStrongNumber(i)) {
+    for (let i = 0; i <= n; i++) {
+        if (isStrongNumber(i)) {
             count++;
             console.log(i);
         }
@@ -416,9 +416,9 @@ function printAndCountStrongNumbers(n) {
 
 function getDigitCount(n) {
     let count = 0;
-    while (n>0) {
+    while (n > 0) {
         count++;
-        n = Math.floor(n/10);
+        n = Math.floor(n / 10);
     }
     return count;
 }
@@ -436,9 +436,9 @@ function isArmstrong1(n) {
     let sum = 0;
     let num = n;
     const digits = getDigitCount(n);
-    while (n>0) {
-        sum += getPower(n%10, digits);
-        n = Math.floor(n/10);
+    while (n > 0) {
+        sum += getPower(n % 10, digits);
+        n = Math.floor(n / 10);
     }
     return num == sum;
 }
@@ -447,9 +447,9 @@ function isArmstrong(n) {
     let sum = 0;
     let num = n;
     const digits = getDigitCount(n);
-    while (n>0) {
-        sum += (n%10)**digits;
-        n = Math.floor(n/10);
+    while (n > 0) {
+        sum += (n % 10) ** digits;
+        n = Math.floor(n / 10);
     }
     return num == sum;
 }
@@ -465,8 +465,8 @@ function isArmstrong(n) {
 // WAJP to print and count all the Armstrong numbers up to 100.
 function printAndCountArmstrongNumbers(n) {
     let count = 0;
-    for (let i = 0; i<=n; i++) {
-        if(isArmstrong(i)) {
+    for (let i = 0; i <= n; i++) {
+        if (isArmstrong(i)) {
             count++;
             console.log(i);
         }
@@ -478,15 +478,15 @@ function printAndCountArmstrongNumbers(n) {
 
 // WAJP to take user input and print whether the number is dissarium number or not.
 function isDissarium(n) {
-    if(n<1) return false;
+    if (n < 1) return false;
     let sum = 0;
     const num = n;
     let digits = getDigitCount(n);
-    while (n>0) {
+    while (n > 0) {
         // console.log({sum, n, digits, curDigit: n%10, "n%10**digits": (n%10)**digits}); 
-        sum += (n%10)**digits;
+        sum += (n % 10) ** digits;
         digits--;
-        n = Math.floor(n/10);
+        n = Math.floor(n / 10);
     }
     return num == sum;
 }
@@ -497,8 +497,8 @@ function isDissarium(n) {
 // WAJP to print and count all the dissarium numbers in a range.
 function printAndCountDissariumNumbers(n) {
     let count = 0;
-    for (let i = 1; i<=n; i++) {
-        if(isDissarium(i)) {
+    for (let i = 1; i <= n; i++) {
+        if (isDissarium(i)) {
             count++;
             console.log(i);
         }
@@ -510,11 +510,11 @@ function printAndCountDissariumNumbers(n) {
 
 // WAJP to print and count all the Happy numbers up to 100
 function isHappy(n) {
-    while (n>9) {
+    while (n > 9) {
         let sum = 0;
-        while (n>0) {
-            sum += (n%10)**2;
-            n = Math.floor(n/10);
+        while (n > 0) {
+            sum += (n % 10) ** 2;
+            n = Math.floor(n / 10);
         }
         n = sum;
     }
@@ -527,8 +527,8 @@ function isHappy(n) {
 // WAJP to print and count all the Happy numbers up to 100.
 function printAndCountHappyNumbers(n) {
     let count = 0;
-    for (let i = 1; i<=n; i++) {
-        if(isHappy(i)) {
+    for (let i = 1; i <= n; i++) {
+        if (isHappy(i)) {
             count++;
             console.log(i);
         }
@@ -539,8 +539,89 @@ function printAndCountHappyNumbers(n) {
 // printAndCountHappyNumbers(100);
 
 // WAJP to take user input and print whether the number is Automorphic number or not.
+// function isAutomorphicNumber(n) {
+//     if (n == 0 || n == 1)
+//         return true;
+//     else if ((n % 10) != 5 && (n % 10) != 6)
+//         return false;
+
+//     const digits = getDigitCount(n);
+//     return n == (n ** 2) % (10 ** digits);
+// }
+
+// function isAutomorphicNumber(n) {
+//      if (n == 0 || n == 1)
+//         return true;
+//     else if ((n % 10) != 5 && (n % 10) != 6)
+//         return false;
+    
+//     const digits = getDigitCount(n);
+//     return ((n**2)-n) % (10**digits) == 0;
+// }
+
+// most optimized
 function isAutomorphicNumber(n) {
-    const digits = getDigitCount(n);
-    return n>0 && n == (n**2)%(10**digits);
+     if (n == 0 || n == 1)
+        return true;
+    else if ((n % 10) != 5 && (n % 10) != 6)
+        return false;
+    
+    let square = n*n;
+
+    while (n>0) {
+        const rem = n % 10;
+        const squareLastDigit = square % 10;
+
+        if(rem != squareLastDigit) return false;
+        n = Math.floor(n/10);
+        square = Math.floor(square/10);
+    }
+
+    return true;
 }
-console.log(isAutomorphicNumber(5));
+
+// console.log(isAutomorphicNumber(336));
+
+// WAJP to print and count all the Automorphic numbers up to 100.
+// function printAndCountAutomorphicNumbers(n) {
+//     let count = 0;
+//     for (let i = 0; i<=n; i++) {
+//         if(isAutomorphicNumber(i)) {
+//             console.log(i);
+//             count++;
+//         }
+//     }
+//     console.log(`Count: ${count}`);
+// }
+
+// function printAndCountAutomorphicNumbers(n) {
+//     let count = 2;
+//     console.log(0);
+//     console.log(1);
+//     for (let i = 5; i<=n; i++) {
+//         const rem = i%10;
+//         if((rem == 5 || rem == 6) && isAutomorphicNumber(i)) {
+//             console.log(i);
+//             count++;
+//         }
+//     }
+//     console.log(`Count: ${count}`);
+// }
+
+function printAndCountAutomorphicNumbers(n) {
+    let count = 2;
+    console.log(0);
+    console.log(1);
+    let i = 5;
+    while (i<=n) {
+        if(isAutomorphicNumber(i)) {
+            console.log(i);
+            count++;
+        }
+
+        ((i%10)==5)? i+=1: i+=9;
+    }
+    console.log(`Count: ${count}`);
+}
+
+// printAndCountAutomorphicNumbers(1000);
