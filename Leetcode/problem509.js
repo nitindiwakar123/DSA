@@ -13,24 +13,11 @@ function getNthFibonacciTerm(n) {
     return current;
 }
 
-function getNthFibonacciTerm(n) {
-    if(n==0){
-        return 0;
-    } else if(n==1){
-        return 1;
-    }
+// function getNthFibonacciTerm(n) {
+//     const g = 1.618033988749895;
+//     return Math.round(((g**n)-(1-g)**n)/Math.sqrt(5));
+// }
 
-    let n1 = 0, n2 = 1, n3 = 0;
-    let i = 1;
-
-    while (i<=n-1) {
-        n3 = n1+n2;
-        n1 = n2;
-        n2 = n3;
-        i++;
-    }
-    return n3;
-}
 
 // Test Cases
 // console.log(getNthFibonacciTerm(0));
@@ -40,6 +27,8 @@ function getNthFibonacciTerm(n) {
 // console.log(getNthFibonacciTerm(4));
 // console.log(getNthFibonacciTerm(5));
 // console.log(getNthFibonacciTerm(6));
+
+console.log(getNthFibonacciTerm(19));
 
 // console.log(getNthFibonacciTerm(1));
 // console.log(getNthFibonacciTerm(11));
