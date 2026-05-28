@@ -609,9 +609,9 @@ function isAutomorphicNumber(n) {
 // }
 
 function printAndCountAutomorphicNumbers(n) {
-    let count = 2;
     console.log(0);
     console.log(1);
+    let count = 2;
     let i = 5;
     while (i<=n) {
         if(isAutomorphicNumber(i)) {
@@ -625,3 +625,34 @@ function printAndCountAutomorphicNumbers(n) {
 }
 
 // printAndCountAutomorphicNumbers(1000);
+
+
+// WAJP to print all the term of Fibonacci series.
+
+function printFibonacciSeries(n) {
+    let a = 0;
+    let b = 1;
+    console.log(a);
+    console.log(b);
+    for (let i = 3; i <= n; i++) {
+        const current = a+b;
+        console.log(current);
+        a = b;
+        b = current;
+    }
+}
+
+function printFibonacciSeriesUptoN(n) {
+    let a = 0;
+    let b = 1;
+    console.log(a);
+    console.log(b);
+    while(a+b <= n) {
+        const current = a+b;
+        console.log(current);
+        a = b;
+        b = current;
+    }
+}
+
+printFibonacciSeriesUptoN(30);
