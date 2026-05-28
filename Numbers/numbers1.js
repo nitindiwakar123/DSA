@@ -655,4 +655,6 @@ function printFibonacciSeriesUptoN(n) {
     }
 }
 
-printFibonacciSeriesUptoN(30);
+// printFibonacciSeriesUptoN(30);
+
+// WAJP to print nth term of Fibonacci series.
