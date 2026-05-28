@@ -18,6 +18,15 @@ function getNthFibonacciTerm(n) {
 //     return Math.round(((g**n)-(1-g)**n)/Math.sqrt(5));
 // }
 
+function fib(n) {
+    if (n == 0)
+        return 0;
+    else if (n == 1)
+        return 1;
+    else
+        return fib(n - 1) + fib(n - 2);
+}
+
 
 // Test Cases
 // console.log(getNthFibonacciTerm(0));
@@ -28,7 +37,7 @@ function getNthFibonacciTerm(n) {
 // console.log(getNthFibonacciTerm(5));
 // console.log(getNthFibonacciTerm(6));
 
-console.log(getNthFibonacciTerm(19));
+// console.log(fib(7));
 
 // console.log(getNthFibonacciTerm(1));
 // console.log(getNthFibonacciTerm(11));
