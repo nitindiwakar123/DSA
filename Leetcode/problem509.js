@@ -1,3 +1,4 @@
+// Recommended to use iterable approach
 function getNthFibonacciTerm(n) {
     if(n==1)
         return 1;
