@@ -658,3 +658,36 @@ function printFibonacciSeriesUptoN(n) {
 // printFibonacciSeriesUptoN(30);
 
 // WAJP to print nth term of Fibonacci series.
+function getNthFibonacciTerm(n) {
+    if(n==1)
+        return 1;
+    let a = 0;
+    let b = 1;
+    let current = 0;
+
+    for (let i = 2; i <= n; i++) {
+        current = a+b;
+        a=b;
+        b=current;
+    }
+    return current;
+}
+
+// WAJP to print all the term of Tribonacci series.
+function printTribonacciSeries(n) {
+    let a = 0;
+    let b = 1;
+    let c = 1;
+    console.log(a);
+    console.log(b);
+    console.log(c);
+    for (let i = 3; i <= n; i++) {
+        const current = a+b+c;
+        console.log(current);
+        a = b;
+        b = c;
+        c = current;
+    }
+}
+
+// printTribonacciSeries(10);
