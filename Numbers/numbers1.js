@@ -554,27 +554,27 @@ function printAndCountHappyNumbers(n) {
 //         return true;
 //     else if ((n % 10) != 5 && (n % 10) != 6)
 //         return false;
-    
+
 //     const digits = getDigitCount(n);
 //     return ((n**2)-n) % (10**digits) == 0;
 // }
 
 // most optimized
 function isAutomorphicNumber(n) {
-     if (n == 0 || n == 1)
+    if (n == 0 || n == 1)
         return true;
     else if ((n % 10) != 5 && (n % 10) != 6)
         return false;
-    
-    let square = n*n;
 
-    while (n>0) {
+    let square = n * n;
+
+    while (n > 0) {
         const rem = n % 10;
         const squareLastDigit = square % 10;
 
-        if(rem != squareLastDigit) return false;
-        n = Math.floor(n/10);
-        square = Math.floor(square/10);
+        if (rem != squareLastDigit) return false;
+        n = Math.floor(n / 10);
+        square = Math.floor(square / 10);
     }
 
     return true;
@@ -613,13 +613,13 @@ function printAndCountAutomorphicNumbers(n) {
     console.log(1);
     let count = 2;
     let i = 5;
-    while (i<=n) {
-        if(isAutomorphicNumber(i)) {
+    while (i <= n) {
+        if (isAutomorphicNumber(i)) {
             console.log(i);
             count++;
         }
 
-        ((i%10)==5)? i+=1: i+=9;
+        ((i % 10) == 5) ? i += 1 : i += 9;
     }
     console.log(`Count: ${count}`);
 }
@@ -635,7 +635,7 @@ function printFibonacciSeries(n) {
     console.log(a);
     console.log(b);
     for (let i = 3; i <= n; i++) {
-        const current = a+b;
+        const current = a + b;
         console.log(current);
         a = b;
         b = current;
@@ -647,8 +647,8 @@ function printFibonacciSeriesUptoN(n) {
     let b = 1;
     console.log(a);
     console.log(b);
-    while(a+b <= n) {
-        const current = a+b;
+    while (a + b <= n) {
+        const current = a + b;
         console.log(current);
         a = b;
         b = current;
@@ -659,16 +659,16 @@ function printFibonacciSeriesUptoN(n) {
 
 // WAJP to print nth term of Fibonacci series.
 function getNthFibonacciTerm(n) {
-    if(n==1)
+    if (n == 1)
         return 1;
     let a = 0;
     let b = 1;
     let current = 0;
 
     for (let i = 2; i <= n; i++) {
-        current = a+b;
-        a=b;
-        b=current;
+        current = a + b;
+        a = b;
+        b = current;
     }
     return current;
 }
@@ -682,7 +682,7 @@ function printTribonacciSeries(n) {
     console.log(b);
     console.log(c);
     for (let i = 3; i <= n; i++) {
-        const current = a+b+c;
+        const current = a + b + c;
         console.log(current);
         a = b;
         b = c;
@@ -691,3 +691,120 @@ function printTribonacciSeries(n) {
 }
 
 // printTribonacciSeries(10);
+
+// WAJP to print nth term of Tribonacci series.
+function getNthTribonacci(n) {
+    if (n == 0)
+        return 0;
+    else if (n == 1 || n == 2)
+        return 1;
+
+    let a = 0;
+    let b = 1;
+    let c = 1;
+    let current = 0;
+    for (let i = 3; i <= n; i++) {
+        current = a + b + c;
+        a = b;
+        b = c;
+        c = current;
+    }
+    return current;
+}
+
+// WAJP to take three user inputs and print LCM of the three numbers.
+function printLCM(a, b, c) {
+    const biggest = a > b ? (a > c ? a : c) : (b > c ? b : c);
+    // console.log({ biggest });
+    for (let i = biggest; ; i++) {
+        if (i % a == 0 && i % b == 0 && i % c == 0) {
+            console.log(i);
+            break;
+        }
+    }
+}
+
+// printLCM(5, 7, 11);
+
+// WAJP to take two user inputs and print GCD/HCF of the three numbers.
+function printHCF(a, b, c) {
+    const smallest = a < b ? (a < c ? a : c) : (b < c ? b : c);
+    // console.log({ smallest });
+    for (let i = smallest; ; i--) {
+        if (a % i == 0 && b % i == 0 && c % i == 0) {
+            console.log(i);
+            break;
+        }
+    }
+}
+
+// printHCF(5, 7, 11);
+
+// WAJP to convert a decimal number into binary number
+function decimalToBinary(n) {
+    let bin = 0;
+    let mul = 1;
+    while (n>0) {
+        const rem = n%2;
+        bin = rem*mul+bin;
+        mul *= 10;
+        n = Math.floor(n/2);
+    }
+    return bin;
+}
+// console.log(decimalToBinary(6));
+
+// WAJP to convert a binary number into decimal number.
+// function binaryToDecimal(n) {
+//     let dec = 0;
+//     let pow = 0;
+//     while (n>0) {
+//         dec += (n%10)*(2**pow);
+//         pow++;
+//         n = Math.floor(n/10);
+//     }
+//     return dec;
+// }
+
+function binaryToDecimal(n) {
+    let dec = 0;
+    let mul = 1;
+    while (n>0) {
+        dec += (n%10)*mul;
+        mul *= 2;
+        n = Math.floor(n/10);
+    }
+    return dec;
+}
+
+// console.log(binaryToDecimal(111));
+
+// WAJP to convert a decimal number into octal number.
+function decimalToOctal(n) {
+    let oct = 0;
+    let mul = 1;
+    while (n>0) {
+        const rem = n%8;        
+        oct = rem*mul+oct;
+        mul *= 10;
+        n = Math.floor(n/8);
+    }
+    return oct;
+}
+
+// console.log(decimalToOctal(28));
+
+// WAJP to convert an octal number into decimal number.
+function octalToDecimal(n) {
+    let dec = 0;
+    let mul = 1;
+    while (n>0) {
+        dec += (n%10)*mul;
+        mul *= 8;
+        n = Math.floor(n/10);
+    }
+    return dec;
+}
+// console.log(octalToDecimal(777));
+
+// WAJP to convert a decimal number into a hexadecimal number.

@@ -130,7 +130,7 @@ function getLCMandLCFbyDivison(a, b) {
 
 function getLCMandLCFbyDivisonOfThree(a, b, c) {
     const HCF = getHCFbyDivision(getHCFbyDivision(a, b), c);
-    const LCM = getLCM(getLCM(a, b), c);
+    const LCM = getLCMbyPrimeFactorization(getLCMbyPrimeFactorization(a, b), c);
 
     return { HCF, LCM };
 
