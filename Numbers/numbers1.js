@@ -744,11 +744,11 @@ function printHCF(a, b, c) {
 function decimalToBinary(n) {
     let bin = 0;
     let mul = 1;
-    while (n>0) {
-        const rem = n%2;
-        bin = rem*mul+bin;
+    while (n > 0) {
+        const rem = n % 2;
+        bin = rem * mul + bin;
         mul *= 10;
-        n = Math.floor(n/2);
+        n = Math.floor(n / 2);
     }
     return bin;
 }
@@ -769,10 +769,10 @@ function decimalToBinary(n) {
 function binaryToDecimal(n) {
     let dec = 0;
     let mul = 1;
-    while (n>0) {
-        dec += (n%10)*mul;
+    while (n > 0) {
+        dec += (n % 10) * mul;
         mul *= 2;
-        n = Math.floor(n/10);
+        n = Math.floor(n / 10);
     }
     return dec;
 }
@@ -783,28 +783,56 @@ function binaryToDecimal(n) {
 function decimalToOctal(n) {
     let oct = 0;
     let mul = 1;
-    while (n>0) {
-        const rem = n%8;        
-        oct = rem*mul+oct;
+    while (n > 0) {
+        const rem = n % 8;
+        oct = rem * mul + oct;
         mul *= 10;
-        n = Math.floor(n/8);
+        n = Math.floor(n / 8);
     }
     return oct;
 }
-
 // console.log(decimalToOctal(28));
 
 // WAJP to convert an octal number into decimal number.
 function octalToDecimal(n) {
     let dec = 0;
     let mul = 1;
-    while (n>0) {
-        dec += (n%10)*mul;
+    while (n > 0) {
+        dec += (n % 10) * mul;
         mul *= 8;
-        n = Math.floor(n/10);
+        n = Math.floor(n / 10);
     }
     return dec;
 }
 // console.log(octalToDecimal(777));
 
 // WAJP to convert a decimal number into a hexadecimal number.
+function decimalToHexadecimal(n) {
+    let hex = "";
+    const hexDigits = "0123456789ABCDEF";
+    while (n > 0) {
+        const rem = n % 16;
+        hex = hexDigits[rem] + hex;
+        n = Math.floor(n / 16);
+    }
+    return hex;
+}
+// console.log(decimalToHexadecimal(42));
+
+// WAJP to convert a hexadecimal number into a decimal number.
+function hexadecimalToDecimal(n) {
+    n = n.toUpperCase();
+    let dec = 0;
+    const hexDigits = "0123456789ABCDEF";
+    let mul = 1;
+
+    for (let i = n.length - 1; i >= 0; i--) {
+        const digit = hexDigits.indexOf(n[i]);
+        if (digit == undefined) return -1;
+        dec += digit * mul;
+        mul *= 16;
+    }
+
+    return dec;
+}
+// console.log(hexadecimalToDecimal("2a"));

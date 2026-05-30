@@ -2,3 +2,4 @@
 14/05/2026 - problem319(Bulb Switcher)
 22/05/2026 - problem136(Single Number)
 27/05/2026 - problem172(Trailing Zeroes in n!)
+30/05/2026 - problem202(Happy Number), problem258(Add Digits)
