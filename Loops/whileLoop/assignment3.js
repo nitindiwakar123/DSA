@@ -323,4 +323,27 @@ function isNumberInDecreasingOrder(n) {
     return true;
 }
 
-console.log(isNumberInDecreasingOrder(0));
+// console.log(isNumberInDecreasingOrder(0));
+
+// A tournaments consists n teams and each
+// team plays one match with one another then
+// return total number of matches played in the
+// tournaments if 4 teams advances to semifinal
+// and two teams for final.
+function getNumberOfMatches(n) {
+    if(n<4) return -1;
+    let total = 0;
+    while (n>1) {
+        total += n-1
+        n = n-1;
+    }
+
+    return total+3;
+}
+
+function getNumberOfMatches(n) {
+    if(n<4) return -1;
+    return (n*(n-1)/2)+3;
+}
+
+console.log(getNumberOfMatches(15));
