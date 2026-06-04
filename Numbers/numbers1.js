@@ -863,4 +863,4 @@ function getCombination(n, r) {
     return comb;
 }
 
-console.log(getCombination(3, 2));
+// console.log(getCombination(3, 2));
