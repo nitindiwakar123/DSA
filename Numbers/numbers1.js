@@ -836,3 +836,31 @@ function hexadecimalToDecimal(n) {
     return dec;
 }
 // console.log(hexadecimalToDecimal("2a"));
+
+// WAJP to calculate permutation or total number of ways of arrangements of n things taken r at a time.
+function getPermutation(n, r) {
+    if (r < 0 || r > n) {
+        return 0;
+    }
+    let perm = 1;
+    for (let i = 0; i < r; i++) {
+        perm = perm * (n - i);
+    }
+    return perm;
+}
+
+// console.log(getPermutation(4, 2));
+
+// WAJP to calculate combination or total number of ways of selecting r things at a time from n things.
+function getCombination(n, r) {
+    if (r < 0 || r > n) {
+        return 0;
+    }
+    let comb = 1;
+    for (let i = 0; i < r; i++) {
+        comb = comb * (n - i) / (r - i);
+    }
+    return comb;
+}
+
+console.log(getCombination(3, 2));
