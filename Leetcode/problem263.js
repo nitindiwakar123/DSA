@@ -7,7 +7,9 @@ function isUglyNumber(n) {
         } else {
             factor++;
         }
-    }    
+    }
+    console.log(n);
+        
     return n===1;
 }
 
