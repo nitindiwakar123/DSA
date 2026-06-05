@@ -35,7 +35,7 @@ function printSmallestElement(arr) {
 
 // Second largest element in an array
 // const arr = [7, -5, 7];
-const arr = [27, 30, 30, 57,, 7, 6, 3, 3, 19];
+// const arr = [27, 30, 30, 57,, 7, 6, 3, 3, 19];
 // function printSecondLargestElement(arr) {
 //     let largest = arr[0];
 
@@ -73,7 +73,7 @@ function printSecondLargestElement(arr) {
     console.log("Second Largest Element:", largest === secondLargest ? -1 : secondLargest);
 
 }
-printSecondLargestElement(arr);
+// printSecondLargestElement(arr);
 
 // Second smallest element in an array
 // const arr = [7, -5, 7];
@@ -95,3 +95,54 @@ function printSecondSmallestElement(arr) {
 }
 
 // printSecondSmallestElement(arr);
+
+// Check the array is sorted or not
+// const newArr = [27, 30, 30, 57, 7, 6, 3, 3, 19];
+// const newArr = [1, 2, 2, 3, 3, 4, 7];
+function isSortedArray(arr) {
+    for (let i = 1; i<arr.length; i++) {
+        if(arr[i]<arr[i-1]) {
+            console.log("Not Sorted Array!", arr);
+            return;
+        } 
+    }    
+    console.log("Array is Sorted!", arr);
+    
+}
+
+// isSortedArray(newArr);
+
+
+// Remove duplicates in place from sorted array
+const newArr = [1, 2, 2, 3, 3, 4, 4, 4, 7, 7, 7];
+
+// brute force
+// function removeDuplicates(arr) {
+//     return [...new Set(arr)];
+// }
+
+// function removeDuplicates(arr) {
+//     const set = new Set(arr);
+//     let index = 0;
+//     for (const element of set) {
+//         arr[index] = element;
+//         index++;
+//     }
+//     return arr;
+// }
+
+// Optimal approach - two pointer
+function removeDuplicates(arr) {
+    let i = 0;
+    for (let j = 1; j<arr.length; j++) {
+        if(arr[j] != arr[i]) {
+            arr[i+1] = arr[j];
+            i++;
+        }
+    }
+
+    console.log(arr);
+    
+}
+
+console.log(removeDuplicates([1, 1, 2, 2, 2, 3, 3]));
