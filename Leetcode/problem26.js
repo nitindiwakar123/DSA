@@ -1,13 +1,13 @@
 // brute
-function removeDuplicates(nums) {
-    const set = new Set(nums);
-    let index = 0;
-    for (const element of set) {
-        nums[index] = element;
-        index++;
-    }
-    return set.size;
-}
+// function removeDuplicates(nums) {
+//     const set = new Set(nums);
+//     let index = 0;
+//     for (const element of set) {
+//         nums[index] = element;
+//         index++;
+//     }
+//     return set.size;
+// }
 
 // optimal
 function removeDuplicates(nums) {

@@ -1,14 +1,21 @@
 // Water Bottles II
 
-function maxBottlesDrunk(numBottles, numExchange) {
-    let maxBottlesDrunk = numBottles;
-    while (numBottles >= numExchange) {
-        maxBottlesDrunk += 1;
-        numBottles = numBottles-numExchange + 1;
-        numExchange++;
-    }
+// function maxBottlesDrunk(numBottles, numExchange) {
+//     let maxBottlesDrunk = numBottles;
+//     while (numBottles >= numExchange) {
+//         maxBottlesDrunk += 1;
+//         numBottles = numBottles-numExchange + 1;
+//         numExchange++;
+//     }
 
-    return maxBottlesDrunk;
+//     return maxBottlesDrunk;
+// };
+
+function maxBottlesDrunk(numBottles, numExchange) {
+   let maxBottles = numBottles;
+   while (numBottles>=numExchange) {
+    
+   }
 };
 
 // Test Cases

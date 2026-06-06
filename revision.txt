@@ -3,3 +3,4 @@
 22/05/2026 - problem136(Single Number)
 27/05/2026 - problem172(Trailing Zeroes in n!)
 30/05/2026 - problem202(Happy Number), problem258(Add Digits)
+06/06/2026 - problem1492(kth Factor of n), problem1518(Water Bottles), 

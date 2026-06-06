@@ -14,31 +14,29 @@
 //     return -1;
 // }
 
-function getKthFactor(n, k) {
-    if (k > n) return -1;
+function kthFactor(n, k) {
+    if(k>n)
+        return -1;
     let position = 0;
-    for (let i = 1; i <= n / 2; i++) {
-        if (n % i == 0) {
+    for (let i = 1; i<=n/2; i++) {
+        if(n%i == 0) {
             position++;
-            if (position == k) {
+            if(position == k)
                 return i;
-            }
         }
     }
     position++;
-    if (position == k) return n;
-    
-    return -1;
+    return position == k? n: -1;
 }
 
-console.log(getKthFactor(42, 8))
+console.log(kthFactor(12, 4))
 
 // Test Cases
 // Edge cases
 // console.log(kthFactor(1, 1)); // 1
 // console.log(kthFactor(1, 2)); // -1
 
-// Small numbers
+// // Small numbers
 // console.log(kthFactor(2, 1)); // 1
 // console.log(kthFactor(2, 2)); // 2
 // console.log(kthFactor(2, 3)); // -1

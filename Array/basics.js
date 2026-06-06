@@ -1,148 +1,71 @@
-// const arr = [1, 2, 3, 4, 5];
+const arr = [1, 5, 6, 8, 9, 10, 19, 13, 16];
+console.log(arr);
 
-// for (let i = 0; i<arr.length; i++) {
-//     console.log(arr[i]);
-// }
-
-// for (const element of arr) {
-//     console.log(element);
-// }
-
-// Larget element in an array
-function printLargestElement(arr) {
-    let largest = arr[0];
-    for (let i = 1; i < arr.length; i++) {
-        if (arr[i] > largest) {
-            largest = arr[i];
+// 1. Access all even index elements from array.
+function printEvenIndexELements(arr) {
+    for (let i = 0; i<arr.length; i++) {
+        if(i%2 === 0) {
+            console.log(arr[i]);
         }
     }
-    console.log("Biggest is:", largest);
 }
-// printLargetElement(arr);
 
-// Smallest element in an array
-// const arr = [27, 30, 30, 57, 7, 6, 19];
-function printSmallestElement(arr) {
-    let smallest = arr[0];
-    for (let i = 1; i < arr.length; i++) {
-        if (arr[i] < smallest) {
-            smallest = arr[i];
+// printEvenIndexELements(arr);
+
+// 2. Access all even elements from array.
+function printEvenELements(arr) {
+    for (let i = 0; i<arr.length; i++) {
+        if(arr[i]%2 === 0) {
+            console.log(arr[i]);
         }
     }
-    console.log("Smallest is:", smallest);
 }
-// printSmallestElement(arr);
 
-// Second largest element in an array
-// const arr = [7, -5, 7];
-// const arr = [27, 30, 30, 57,, 7, 6, 3, 3, 19];
-// function printSecondLargestElement(arr) {
-//     let largest = arr[0];
+// printEvenELements(arr);
 
-//     for (let i = 1; i < arr.length; i++) {
-//         if (arr[i] > largest) {
-//             largest = arr[i];
-//         }
-//     }
-//     console.log(largest);
-
-//     let secondLargest = arr[0];
-//     for (let i = 1; i < arr.length; i++) {
-//         if (arr[i] > secondLargest && arr[i] != largest) {
-//             secondLargest = arr[i];
-//         }
-//     }
-//     console.log({largest, secondLargest});
-// }
-
-// printSecondLargestElement(arr);
-
-// Most optimized
-function printSecondLargestElement(arr) {
-    let largest = arr[0];
-    let secondLargest = arr[0];
-    for (let i = 1; i < arr.length; i++) {
-        const current = arr[i];
-        if (current > largest) {
-            secondLargest = largest;
-            largest = current;
-        } else if (current < largest && current > secondLargest) {
-            secondLargest = current;
+// 3. count all even elements from array.
+function countEvenELements(arr) {
+    let count = 0;
+    for (let i = 0; i<arr.length; i++) {
+        if(arr[i]%2 === 0) {
+            count++;
         }
     }
-    console.log("Second Largest Element:", largest === secondLargest ? -1 : secondLargest);
-
-}
-// printSecondLargestElement(arr);
-
-// Second smallest element in an array
-// const arr = [7, -5, 7];
-// const arr = [27, 30, 30, 57, 7, 6, 3, 3, 19];
-function printSecondSmallestElement(arr) {
-    let smallest = arr[0];
-    let secondSmallest = arr[0];
-
-    for (let i = 1; i < arr.length; i++) {
-        const current = arr[i];
-        if (current < smallest) {
-            secondSmallest = smallest;
-            smallest = current;
-        } else if (current > smallest && current < secondSmallest) {
-            secondSmallest = current;
-        }
-    }
-    console.log({ smallest, secondSmallest });
-}
-
-// printSecondSmallestElement(arr);
-
-// Check the array is sorted or not
-// const newArr = [27, 30, 30, 57, 7, 6, 3, 3, 19];
-// const newArr = [1, 2, 2, 3, 3, 4, 7];
-function isSortedArray(arr) {
-    for (let i = 1; i<arr.length; i++) {
-        if(arr[i]<arr[i-1]) {
-            console.log("Not Sorted Array!", arr);
-            return;
-        } 
-    }    
-    console.log("Array is Sorted!", arr);
+    console.log("Count:", count);
     
 }
 
-// isSortedArray(newArr);
+// countEvenELements(arr);
 
+// 4. Access all elements of array from end.
+function elementsFromEnd(arr) {
+    for (let i = arr.length-1; i>=0; i--) {
+        console.log(arr[i]);
+    }
+}
+// elementsFromEnd(arr);
 
-// Remove duplicates in place from sorted array
-const newArr = [1, 2, 2, 3, 3, 4, 4, 4, 7, 7, 7];
-
-// brute force
-// function removeDuplicates(arr) {
-//     return [...new Set(arr)];
-// }
-
-// function removeDuplicates(arr) {
-//     const set = new Set(arr);
-//     let index = 0;
-//     for (const element of set) {
-//         arr[index] = element;
-//         index++;
-//     }
-//     return arr;
-// }
-
-// Optimal approach - two pointer
-function removeDuplicates(arr) {
-    let i = 0;
-    for (let j = 1; j<arr.length; j++) {
-        if(arr[j] != arr[i]) {
-            arr[i+1] = arr[j];
-            i++;
+// 5. print and count all three-digit numbers from array
+function printAndCountThreeDigitsNumbers(arr) {
+    let count = 0;
+    for (const num of arr) {
+        if(num>99 && num<1000) {
+            count++;
+            console.log(num);
         }
     }
-
-    console.log(arr);
-    
 }
 
-console.log(removeDuplicates([1, 1, 2, 2, 2, 3, 3]));
+// printAndCountThreeDigitsNumbers([1, 2, 54, 344, 799, 999, 1000, 1999]);
+
+// 6. Print sum of all elements from array.
+function printSumOfElements(arr) {
+    let sum = 0;
+    for (const num of arr) {
+        sum += num;
+    }
+
+    console.log(sum);
+}
+
+// printSumOfElements([10, 10, 9]);
