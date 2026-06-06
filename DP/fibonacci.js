@@ -14,7 +14,7 @@ function getNthFibonacci(n) {
 
     return b;
 }
-// console.log(getNthFibonacci(6));
+// console.log(getNthFibonacci(70));
 
 //fibonacci with recursion
 function fibonacci(n) {
@@ -44,7 +44,7 @@ function fibonacciWithDP(n) {
 
 // fibonacciWithDP(50);
 
-// Tabulation approach most faster but its harder to implement and memory heavy.
+// Tabulation approach faster but its harder to implement and memory heavy.
 
 
 // Fibonacci with Memoization and recursion (Top Down DP)
@@ -54,33 +54,19 @@ function getFibonacci(n) {
 }
 
 function fib(dp, n) {
-    if (n == 0 || n == 1)
+    if (n == 0 || n == 1) {
         return n;
-    else if (dp[n] != -1)
+    } else if (dp[n] != -1) {
         return dp[n]
+    }
 
     return dp[n] = fib(dp, n - 1) + fib(dp, n - 2);
 }
 // console.log(getFibonacci(8));
 
 
-// house robber
-// function robProfit(nums) {
-//     if(nums.length == 1)
-//         return nums[0];
-
-//     const dp = 
-// }
-
-
-// function minCost(cost) {
-//     const n = cost.length;
-//     const dp = new Array(n);
-//     dp[0] = cost[0];
-//     dp[1] = cost[1];
-
-//     for (let i = 2; i < n; i++) {
-        
-//     }
-// }
-
+// Optimization chart(rank to most - worst)
+// getNthFibonacci: Iterative two-variable method (O(n), O(1)) // most
+// fibonacciWithDP: DP Tabulation (O(n), O(n))
+// getFibonacci: DP Memoization (O(n), O(n))
+// fibonacci: Plain Recursion (O(2ⁿ))
