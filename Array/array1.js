@@ -100,14 +100,14 @@ function printSecondSmallestElement(arr) {
 // const newArr = [27, 30, 30, 57, 7, 6, 3, 3, 19];
 // const newArr = [1, 2, 2, 3, 3, 4, 7];
 function isSortedArray(arr) {
-    for (let i = 1; i<arr.length; i++) {
-        if(arr[i]<arr[i-1]) {
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] < arr[i - 1]) {
             console.log("Not Sorted Array!", arr);
             return;
-        } 
-    }    
+        }
+    }
     console.log("Array is Sorted!", arr);
-    
+
 }
 
 // isSortedArray(newArr);
@@ -134,15 +134,15 @@ const newArr = [1, 2, 2, 3, 3, 4, 4, 4, 7, 7, 7];
 // Optimal approach - two pointer
 function removeDuplicates(arr) {
     let i = 0;
-    for (let j = 1; j<arr.length; j++) {
-        if(arr[j] != arr[i]) {
-            arr[i+1] = arr[j];
+    for (let j = 1; j < arr.length; j++) {
+        if (arr[j] != arr[i]) {
+            arr[i + 1] = arr[j];
             i++;
         }
     }
 
     console.log(arr);
-    
+
 }
 
 // console.log(removeDuplicates([1, 1, 2, 2, 2, 3, 3]));
@@ -150,10 +150,10 @@ function removeDuplicates(arr) {
 // Left rotate the array by one place
 function rotateArray(arr, d) {
     const temp = arr[0];
-    for (let i = 1; i<arr.length; i++) {
-        arr[i-1] = arr[i];
+    for (let i = 1; i < arr.length; i++) {
+        arr[i - 1] = arr[i];
     }
-    arr[arr.length-1] = temp;
+    arr[arr.length - 1] = temp;
     console.log(arr);
 }
 
@@ -170,7 +170,7 @@ function rotateArray(arr, d) {
 //     for (let i = d; i<arr.length; i++) {
 //         arr[i-d] = arr[i];
 //     }
-    
+
 //     for (let i = arr.length-d; i<arr.length; i++) {
 //         arr[i] = temps[i - (arr.length-d)];
 //     }
@@ -191,47 +191,66 @@ function reverse(arr, start, end) {
         arr[start] = arr[end];
         arr[end] = temp;
         start++;
-        end--; 
+        end--;
     }
 }
 
 function rotateArray(arr, d) {
     const n = arr.length;
-    d = d%n;
-    
-    reverse(arr, 0, d-1);
-    reverse(arr, d, n-1);
-    reverse(arr, 0, n-1);
+    d = d % n;
+
+    reverse(arr, 0, d - 1);
+    reverse(arr, d, n - 1);
+    reverse(arr, 0, n - 1);
 
     console.log(arr);
-    
+
 }
 
 // rotateArray([5, 6, 7, 18, 22, 30], 15); 
 // rotateArray([5, 6, 7, 18, 22, 30], 2); 
 
 // Move all zeroes to the end of the array
+// brute
+// function moveZeroes(nums) {
+//     const temp = [];
+//     for (const n of nums) {
+//         if (n != 0)
+//             temp.push(n);
+//     }
+
+//     for (let i = 0; i < nums.length; i++) {
+//         nums[i] = temp[i];
+//     }
+
+//     for (let i = temp.length; i < nums.length; i++) {
+//         nums[i] = 0;
+//     }
+
+//     return nums;
+// }
+
+// optimal
 function moveZeroes(nums) {
-    console.log(nums);
-    
-    const temp = [];
-    for (const n of nums) {
-        if(n != 0) 
-            temp.push(n);
-    }
-
+    let j = -1;
     for (let i = 0; i < nums.length; i++) {
-        
-        if(temp[i] == undefined) {
-            nums[i] = 0;
-        } else {
-            nums[i] = temp[i];
+        if (nums[i] == 0) {
+            j = i;
+            break;
         }
-
     }
-    console.log(nums);
-    
-    
+
+    if (j == -1) return nums;
+
+    for (let i = j + 1; i < nums.length; i++) {
+        if (nums[i] != 0) {
+            nums[j] = nums[i];
+            nums[i] = 0;
+            j++;
+        }
+    }
+
+    return nums;
 }
 
-moveZeroes([1, 0, 2, 3, 2, 0, 0, 4, 5, 1]);
+console.log(moveZeroes([1, 0, 2, 3, 2, 0, 0, 4, 5, 1]));

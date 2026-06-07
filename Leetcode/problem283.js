@@ -1,23 +1,44 @@
 // 283. Move Zeroes
 
 // brute force
-function moveZeroes(nums) {
-    const temp = [];
-    for (const n of nums) {
-        if(n != 0) 
-            temp.push(n);
-    }
+// function moveZeroes(nums) {
+//     const temp = [];
+//     for (const n of nums) {
+//         if(n != 0) 
+//             temp.push(n);
+//     }
 
-    for (let i = 0; i < nums.length; i++) {
-        
-        if(temp[i] == undefined) {
-            nums[i] = 0;
-        } else {
-            nums[i] = temp[i];
-        }
+//     for (let i = 0; i < nums.length; i++) {
+//             nums[i] = temp[i];
+//     }
 
-    }
+//     for (let i = temp.length; i < nums.length; i++) {
+//             nums[i] = 0;
+//     }
     
+//     return nums;
+// }
+
+// optimal
+function moveZeroes(nums) {
+    let j = -1;
+    for (let i = 0; i < nums.length; i++) {
+        if(nums[i] == 0) {
+            j = i;
+            break;
+        }
+    }
+
+    if(j == -1) return nums;
+
+    for (let i = j+1; i < nums.length; i++) {
+        if(nums[i] != 0) {
+            nums[j] = nums[i];
+            nums[i] = 0;
+            j++;
+        }
+    }
+
     return nums;
 }
 
