@@ -10,16 +10,21 @@
 // }
 
 // optimal
-function removeDuplicates(nums) {
-    let i = 0;
-    for (let j = 1; j<nums.length; j++) {
-        if(nums[j] != nums[i]) {
-            nums[i+1] = nums[j];
-            i++;
-        }
-    }
+// function removeDuplicates(nums) {
+//     let i = 0;
+//     for (let j = 1; j<nums.length; j++) {
+//         if(nums[j] != nums[i]) {
+//             nums[i+1] = nums[j];
+//             i++;
+//         }
+//     }
 
-    return i+1;
-}
+//     return i+1;
+// }
 
-console.log(removeDuplicates([1, 1, 2, 2, 2, 3, 3]));
+// Test Cases
+// console.log(removeDuplicates([1,1,2]));
+// console.log(removeDuplicates([1,2,3]));
+// console.log(removeDuplicates([0,0,1,1,1,2,2,3,3,4]));
+// console.log(removeDuplicates([0,0,1,1,1,2,2,3,3,4]));
+// console.log(removeDuplicates([0,0,1,1,1,2,2,3,3,4]));

@@ -158,25 +158,80 @@ function rotateArray(arr, d) {
 }
 
 // Left rotate the array by d places
-
 // brute force
-function rotateArray(arr, d) {
-    d = d%arr.length;
+// function rotateArray(arr, d) {
+//     d = d%arr.length;
 
-    const temps = [];
-    for (let i = 0; i<d; i++) {
-        temps.push(arr[i]);
-    }
+//     const temps = [];
+//     for (let i = 0; i<d; i++) {
+//         temps.push(arr[i]);
+//     }
 
-    for (let i = d; i<arr.length; i++) {
-        arr[i-d] = arr[i];
-    }
+//     for (let i = d; i<arr.length; i++) {
+//         arr[i-d] = arr[i];
+//     }
     
-    for (let i = arr.length-d; i<arr.length; i++) {
-        arr[i] = temps[i - (arr.length-d)];
-    }
-    console.log(arr);
-}
+//     for (let i = arr.length-d; i<arr.length; i++) {
+//         arr[i] = temps[i - (arr.length-d)];
+//     }
+//     console.log(arr);
+// }
 
 // rotateArray([1, 2, 3, 4, 5], 2); 
-rotateArray([5, 6, 7, 18, 22, 30], 15); 
+// rotateArray([5, 6, 7, 18, 22, 30], 15);
+// rotateArray([5, 6, 7, 18, 22, 30], 2); 
+
+// faster but consuming more space due to temps array
+
+// alternative a little slower than previous one but less in memory consuming
+
+function reverse(arr, start, end) {
+    while (start <= end) {
+        const temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+        start++;
+        end--; 
+    }
+}
+
+function rotateArray(arr, d) {
+    const n = arr.length;
+    d = d%n;
+    
+    reverse(arr, 0, d-1);
+    reverse(arr, d, n-1);
+    reverse(arr, 0, n-1);
+
+    console.log(arr);
+    
+}
+
+// rotateArray([5, 6, 7, 18, 22, 30], 15); 
+// rotateArray([5, 6, 7, 18, 22, 30], 2); 
+
+// Move all zeroes to the end of the array
+function moveZeroes(nums) {
+    console.log(nums);
+    
+    const temp = [];
+    for (const n of nums) {
+        if(n != 0) 
+            temp.push(n);
+    }
+
+    for (let i = 0; i < nums.length; i++) {
+        
+        if(temp[i] == undefined) {
+            nums[i] = 0;
+        } else {
+            nums[i] = temp[i];
+        }
+
+    }
+    console.log(nums);
+    
+    
+}
+
+moveZeroes([1, 0, 2, 3, 2, 0, 0, 4, 5, 1]);
