@@ -3,4 +3,5 @@
 22/05/2026 - problem136(Single Number)
 27/05/2026 - problem172(Trailing Zeroes in n!)
 30/05/2026 - problem202(Happy Number), problem258(Add Digits)
-06/06/2026 - problem1492(kth Factor of n), problem1518(Water Bottles), 
+06/06/2026 - problem1492(kth Factor of n), problem1518(Water Bottles), problem70(climbing stairs), problem509(Fibonacci Number)
+07/06/2026 - problem263(Ugly Number), problem3100(Water Bottles 2)

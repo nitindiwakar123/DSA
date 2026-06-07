@@ -40,7 +40,7 @@ function way(dp, n) {
     return dp[n] = way(dp, n - 1) + way(dp, n - 2);
 }
 
-console.log(climbStairs(8));
+// console.log(climbStairs(8));
 
 // dp tabulation approach
 function ways(n) {
@@ -51,4 +51,4 @@ function ways(n) {
     return dp[n];
 }
 
-// console.log(ways(8));
+console.log(ways(8));

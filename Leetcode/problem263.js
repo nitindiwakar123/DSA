@@ -1,16 +1,16 @@
 function isUglyNumber(n) {
-    if(n<1) return false;
+    if (n < 1) return false;
     let factor = 2;
-    while (factor<=5) {
-        if(n%factor == 0) {
+    while (factor <= 5) {
+        if (n % factor == 0) {
             n /= factor;
         } else {
             factor++;
         }
     }
     console.log(n);
-        
-    return n===1;
+
+    return n === 1;
 }
 
 // Test Cases
