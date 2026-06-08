@@ -69,3 +69,9 @@ function printSumOfElements(arr) {
 }
 
 // printSumOfElements([10, 10, 9]);
+
+const a = [40, 12, 30, 20, 10];
+
+// for (let i = 0; i<a.length; i++) {
+//     if()
+// }

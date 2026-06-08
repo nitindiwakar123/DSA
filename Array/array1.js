@@ -253,4 +253,121 @@ function moveZeroes(nums) {
     return nums;
 }
 
-console.log(moveZeroes([1, 0, 2, 3, 2, 0, 0, 4, 5, 1]));
+// console.log(moveZeroes([1, 0, 2, 3, 2, 0, 0, 4, 5, 1]));
+
+// Linear Search
+
+function findN(nums, n) {
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] == n) {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+// console.log(findN([1, 2, 3, 4, 5], 4));
+// console.log(findN([1, 2, 3, 4, 5, 6, 7, 3], 3));
+
+// find the union and intersection of the two sorted arrays
+
+// function union(a, b) {
+//     return [...new Set([...a, ...b])];
+//     // not recomendable for interviews this approach is using shortcuts and abstraction of js
+// }
+
+// function union(a, b) {
+//     const set = new Set();
+
+//     for (const n of a) {
+//         set.add(n);
+//     }
+
+//     for (const n of b) {
+//         set.add(n);
+//     }
+
+//     const union = [];
+//     for (const n of set) {
+//         union.push(n);
+//     }
+
+//     return union;
+// }
+
+// console.log(union([1, 1, 2, 3, 4, 5], [2, 3, 4, 4, 5, 6]));
+
+// function union(a, b) {
+//     let i = 0;
+//     let j = 0;
+//     const union = [];
+
+//     while (i < a.length || j < b.length) {
+
+//         if (a[i] <= b[j] && union[union.length - 1] != a[i]) {
+//             union.push(a[i]);
+//             i++;
+//         } else if (a[i] <= b[j]) {
+//             i++;
+//         }
+//         else if (b[j] < a[i] && union[union.length - 1] != b[j]) {
+//             union.push(b[j]);
+//             j++
+//         } else if (b[j] < a[i]) {
+//             j++;
+//         } else {
+//             if (i < a.length) {
+//                 union.push(a[i]);
+//                 i++;
+//             } else if (j < b.length) {
+//                 union.push(b[j]);
+//                 j++;
+//             }
+//         }
+
+//     }
+
+//     return union;
+// }
+
+function union(a, b) {
+    const n1 = a.length;
+    const n2 = b.length;
+    let i = 0;
+    let j = 0;
+    const union = [];
+
+    while (i < n1 && j < n2) {
+        if (a[i] <= b[j]) {
+            if (union.length == 0 || union.at(-1) != a[i]) {
+                union.push(a[i]);
+            }
+            i++;
+        } else {
+            if (union.length == 0 || union.at(-1) != b[j]) {
+                union.push(b[j]);
+            }
+            j++;
+        }
+    }
+
+    while (i < n1) {
+        if (union.at(-1) != a[i]) {
+            union.push(a[i]);
+        }
+        i++;
+    }
+
+    while (j < n2) {
+        if (union.at(-1) != b[j]) {
+            union.push(b[j]);
+        }
+        j++;
+    }
+
+    return union;
+}
+
+// console.log(union([2, 3, 4, 4, 5, 6, 7, 8, 9], [1, 1, 2, 3, 4, 5]));
+// console.log(union([56, 76, 76, 98, 99, 100], [56, 56, 78, 99]));
