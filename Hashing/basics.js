@@ -3,19 +3,19 @@ function printMaxFrequency(a) {
     for (const n of a) {
         freq[n]++;
     }
-    
+
     let elem = a[0];
     let maxFreq = 1;
-    for (let i = 0; i<freq.length; i++) {
-        if(freq[i]>maxFreq) { 
+    for (let i = 0; i < freq.length; i++) {
+        if (freq[i] > maxFreq) {
             maxFreq = freq[i];
             elem = i;
         }
     }
-    
+
     console.log("Max freq element is: ", elem);
-    
-}   
+
+}
 
 // printMaxFrequency([4, 6, 4, 4, 7, 8, 6, 6, 9, 4, 8, 8, 8, 7, 2, 8, 6, 4]);
 
@@ -41,27 +41,61 @@ function printFrequency(a) {
     let max = a[0];
 
     for (const n of a) {
-        if(n>max) {
+        if (n > max) {
             max = n;
-        } else if(n<min) {
+        } else if (n < min) {
             min = n;
         }
     }
 
-    const freq = new Array(max-min+1).fill(0);
+    const freq = new Array(max - min + 1).fill(0);
 
     for (const n of a) {
-        freq[n-min]++;
+        freq[n - min]++;
     }
-    console.log(freq);
-    
 
     for (let i = 0; i < freq.length; i++) {
-        if(freq[i]>0) {
-           console.log((1+min)+"is: ", freq[i]+"times");
-            
+        if (freq[i] > 0) {
+            console.log((1 + min) + "is: ", freq[i] + "times");
         }
     }
 }
 
-printFrequency([2, 4, -3, 5, 2, 1, -2, 3, 4, -2])
+// printFrequency([2, 4, -3, 5, 2, 1, -2, 3, 4, -2]);
+
+
+function countSort(a) {
+    let min = a[0];
+    let max = a[0];
+
+    for (const n of a) {
+        if (n > max)
+            max = n;
+
+        else if (n < min)
+            min = n;
+
+    }
+
+    const freq = new Array(max - min + 1).fill(0);
+
+    for (const n of a) {
+        freq[n - min]++;
+    }
+
+    let j = 0;
+
+    for (let i = 0; i < freq.length; i++) {
+        while (freq[i]-- > 0) {
+            a[j++] = i + min;
+        }
+    }
+
+    return a;
+}
+
+// console.log(countSort([8, -3, 4, 7, -5, 8, 10, -3, 7, 10]));   
+
+function hashing(a) {
+    
+}
