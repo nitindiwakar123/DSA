@@ -277,6 +277,8 @@ function findN(nums, n) {
 //     // not recomendable for interviews this approach is using shortcuts and abstraction of js
 // }
 
+// Union
+// brute
 // function union(a, b) {
 //     const set = new Set();
 
@@ -298,39 +300,7 @@ function findN(nums, n) {
 
 // console.log(union([1, 1, 2, 3, 4, 5], [2, 3, 4, 4, 5, 6]));
 
-// function union(a, b) {
-//     let i = 0;
-//     let j = 0;
-//     const union = [];
-
-//     while (i < a.length || j < b.length) {
-
-//         if (a[i] <= b[j] && union[union.length - 1] != a[i]) {
-//             union.push(a[i]);
-//             i++;
-//         } else if (a[i] <= b[j]) {
-//             i++;
-//         }
-//         else if (b[j] < a[i] && union[union.length - 1] != b[j]) {
-//             union.push(b[j]);
-//             j++
-//         } else if (b[j] < a[i]) {
-//             j++;
-//         } else {
-//             if (i < a.length) {
-//                 union.push(a[i]);
-//                 i++;
-//             } else if (j < b.length) {
-//                 union.push(b[j]);
-//                 j++;
-//             }
-//         }
-
-//     }
-
-//     return union;
-// }
-
+//optimal
 function union(a, b) {
     const n1 = a.length;
     const n2 = b.length;
@@ -369,5 +339,49 @@ function union(a, b) {
     return union;
 }
 
-// console.log(union([2, 3, 4, 4, 5, 6, 7, 8, 9], [1, 1, 2, 3, 4, 5]));
+// console.log(union([2, 3, 4, 4, 5, 6], [1, 1, 2, 3, 4, 5]));
 // console.log(union([56, 76, 76, 98, 99, 100], [56, 56, 78, 99]));
+
+// Intersection
+// brute
+// function intersection(a, b) {
+//     const n1 = a.length;
+//     const n2 = b.length;
+//     const visited = new Array(n2).fill(0);
+//     const intersec = [];
+//     for (let i = 0; i < n1; i++) {
+//         for (let j = 0; j < n2; j++) {
+//             if(a[i] === b[j] && visited[j] === 0) {
+//                 intersec.push(b[j]);
+//                 visited[j] = 1;
+//                 break;
+//             }
+//             if(b[j] > a[i]) break;
+//         }
+//     }
+
+//     return intersec;
+// }
+
+// optimized
+function intersection(a, b) {
+    const intersec = [];
+    let i = 0;
+    let j = 0;
+
+    while (i < a.length && j < b.length ) {
+        if(a[i] < b[j]) {
+            i++;
+        } else if(b[j] < a[i]){
+            j++;
+        } else {
+            intersec.push(a[i]);
+            i++;
+            j++;
+        }
+    }
+
+    return intersec;
+}
+
+console.log(intersection([2, 3, 3, 5, 6, 6, 7], [1, 2, 2, 3, 3, 4, 5, 6, 6]));

@@ -1,14 +1,30 @@
-function isThreeDivisors(n) {
-    let i = 1;
-    let divisorsCount = 0;
+// brute
+// function isThreeDivisors(n) {
+//     let i = 1;
+//     let divisorsCount = 0;
 
-    while (i<=n) {
-        if(n%i==0) divisorsCount++;
+//     while (i<=n) {
+//         if(n%i==0) divisorsCount++;
+//         i++;
+//     }
+
+//     return divisorsCount == 3;
+// }
+
+// optimal
+function isThreeDivisors(n) {
+    let count = 1;
+    let i = 1;
+    while (i <= n/2) {
+        if (n % i === 0) {
+            count++;
+        }
         i++;
     }
-
-    return divisorsCount == 3;
+    
+    return count === 3;
 }
+
 
 // Test/Edge cases
 // console.log(isThreeDivisors(0));  // false
