@@ -1,11 +1,12 @@
 function mirrorDistance(n) {
     let rev = 0;
-    let num = n;
-    while (n>0) {
-        rev = rev*10+(n%10);
-        n = Math.floor(n/10);
+    const num = n;
+
+    while (n > 0) {
+        rev = rev * 10 + (n%10);
+        n = Math.floor(n / 10);
     }
-    const distance = num-rev;
+    const distance = num - rev;
     return (distance<0)? -distance: distance;
 }
 

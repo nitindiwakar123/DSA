@@ -8,6 +8,17 @@ function countDigits(num) {
     return count;
 }
 
+function countDigits(num) {
+    let count = 0;
+    const n = num;
+    while (num>0) {
+        if(n % (num%10) == 0)
+            count++;
+        num = Math.floor(num/10);
+    }
+    return count;
+}
+
 // Test Cases
 // console.log(countDigits(0));
 // console.log(countDigits(1));

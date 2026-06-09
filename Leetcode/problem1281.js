@@ -15,7 +15,7 @@ function getSubtract(n) {
 // Test Cases
 
 // Basic
-// console.log(getSubtract(234));
+console.log(getSubtract(234));
 
 // Edge Cases
 // console.log(getSubtract(0)); //1

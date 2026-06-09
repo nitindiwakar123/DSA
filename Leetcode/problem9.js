@@ -1,12 +1,28 @@
+// brute
 function isPalindrome(x) {
     let rev = 0;
     const num = x;
-    while (x>0) {
-        rev = rev*10+(x%10);
-        x = Math.floor(x/10);
+
+    while (x > 0) {
+        rev = rev * 10 + (x % 10);
+        x = Math.floor(x / 10);
     }
-    
-    return num==rev;
+
+    return num === rev;
+}
+
+// better
+function isPalindrome(x) {
+    if (x < 0) return false;
+    let rev = 0;
+    const num = x;
+
+    while (x > 0) {
+        rev = rev * 10 + (x % 10);
+        x = Math.floor(x / 10);
+    }
+
+    return num === rev;
 }
 
 // Test Cases
