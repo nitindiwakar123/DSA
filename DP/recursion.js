@@ -19,7 +19,3 @@ function printELementsReverse(arr, index) {
 
 // printELementsReverse([1, 2, 3, 4], 0);
 
-// return the biggest element in array
-function get(params) {
-    
-}

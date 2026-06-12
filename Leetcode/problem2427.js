@@ -1,7 +1,8 @@
+// brute
 // function commonFactors(a, b) {
-//     let i = 1;
 //     let small = a>b? b: a;
 //     let count = 0;
+//     let i = 1;
 //     while (i<=small) {
 //         if(a%i==0 && b%i==0) count++;
 //         i++;
@@ -51,7 +52,7 @@ function getHcf(a, b) {
 
 function commonFactors(a, b) {
     const hcf = getHcf(a, b);
-    
+
     let count = 1;
     for (let i = 1; i <= hcf/2; i++) {
         if (hcf%i == 0) {
@@ -61,10 +62,11 @@ function commonFactors(a, b) {
     return count;
 }
 
+
 // Test Cases
-// console.log(commonFactors(1, 1)); // 1
-// console.log(commonFactors(1, 2)); // 1
-// console.log(commonFactors(2, 4)); // 2
+console.log(commonFactors(1, 1)); // 1
+console.log(commonFactors(1, 2)); // 1
+console.log(commonFactors(2, 4)); // 2
 
 // console.log(commonFactors(4, 18));
 // console.log(commonFactors(8, 4));
