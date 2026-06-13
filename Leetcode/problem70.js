@@ -1,4 +1,4 @@
-// brute
+// brute - most optimized
 // function climbStairs(n) {
 //     let a = 1;
 //     let b = 2;
@@ -51,4 +51,4 @@ function ways(n) {
     return dp[n];
 }
 
-console.log(ways(8));
+console.log(ways(8));   

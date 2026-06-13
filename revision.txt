@@ -6,3 +6,4 @@
 06/06/2026 - problem1492(kth Factor of n), problem1518(Water Bottles), problem70(climbing stairs), problem509(Fibonacci Number)
 07/06/2026 - problem263(Ugly Number), problem3100(Water Bottles 2), problem1137(Nth tribonacci number), problem26(Remove duplicates in array)
 09/06/2026 - problem1952(Three Divisors), problem1281(Subtract the Product and Sum of Digits of an Integer), problem2520(Count the Digits That Divide a Number), problem3783(Mirror Distance of an Integer), problem9(Palindrome Number)
+12/06/2026 - problem2427(Common Factors)
