@@ -1,10 +1,24 @@
-// optimal
 function deleteDuplicates(head) {
     let temp = head;
+    let duplicateVal = 0;
+    let isAnyDistinct = false;
     while (temp != null && temp.next != null) {
         if (temp.val == temp.next.val) {
-            temp.next = temp.next.next;
+            duplicateVal = temp.val;
+            while (temp != null && temp.val == duplicateVal) {
+                if (temp.next == null && !isAnyDistinct) {
+                    head = null;
+                    temp = head;
+                } else if (temp.next == null) {
+                    temp = null;
+                } else {
+                    temp.val = temp.next.val;
+                    temp.next = temp.next.next;
+                }
+
+            }
         } else {
+            isAnyDistinct = true;
             temp = temp.next;
         }
     }
@@ -43,18 +57,18 @@ function iterateOverLinkedList(head) {
 }
 
 // Test Cases
-// let head = createSinglyLinkedList([10, 20, 20, 20, 40]);
+// let head = createSinglyLinkedList([1, 2, 3, 3, 4, 4, 5]);
 // let resultHead = deleteDuplicates(head);
 // iterateOverLinkedList(resultHead);
 
-// let head = createSinglyLinkedList([1,1,2,3,3]);
+// let head = createSinglyLinkedList([1,1,1,2,3]);
 // let resultHead = deleteDuplicates(head);
 // iterateOverLinkedList(resultHead);
 
-// let head = createSinglyLinkedList([1, 2, 2, 2, 4, 5]);
+// let head = createSinglyLinkedList([1, 1]);
 // let resultHead = deleteDuplicates(head);
 // iterateOverLinkedList(resultHead);
 
-// let head = createSinglyLinkedList([1, 1, 1]);
-// let resultHead = deleteDuplicates(head);
-// iterateOverLinkedList(resultHead);
+let head = createSinglyLinkedList([1, 2, 2]);
+let resultHead = deleteDuplicates(head);
+iterateOverLinkedList(resultHead);
