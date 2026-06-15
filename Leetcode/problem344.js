@@ -1,3 +1,4 @@
+// optimal O(n), s(1)
 function reverseString(s) {
     let left = 0;
     let right = s.length - 1;
@@ -12,3 +13,7 @@ function reverseString(s) {
 
     return s;
 }
+
+// Test Cases
+// console.log(reverseString(["H","a","n","n","a","h"]));
+console.log(reverseString(["h","e","l","l","o"]));
