@@ -1,17 +1,37 @@
 // 167. Two Sum II - Input Array Is Sorted
 
 // brute
+// function twoSum(numbers, target) {
+//     const n = numbers.length;
+//     for (let i = 0; i < n - 1; i++) {
+//         for (let j = i + 1; j < n; j++) {
+
+//             const current = numbers[i] + numbers[j];
+//             if (current == target)
+//                 return [i + 1, j + 1];
+//         }
+//     }
+
+//     return [-1, -1];
+// }
+
+//optimal
 function twoSum(numbers, target) {
     const n = numbers.length;
-    for (let i = 0; i < n - 1; i++) {
-        for (let j = i + 1; j < n; j++) {
+    let left = 0;
+    let right = n - 1;
 
-            const current = numbers[i] + numbers[j];
-            if (current == target)
-                return [i + 1, j + 1];
-        }
+    while (left < right) {
+        const sum = numbers[left] + numbers[right];
+
+        if (sum == target)
+            return [left + 1, right + 1];
+        else if (sum < target)
+            left++;
+        else if (sum > target)
+            right--;
+
     }
-
     return [-1, -1];
 }
 
