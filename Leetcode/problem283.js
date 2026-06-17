@@ -24,23 +24,23 @@
 // }
 
 // better
-function moveZeroes(nums) {
-    const temp = [];
-    for (const n of nums) {
-        if (n != 0)
-            temp.push(n);
-    }
+// function moveZeroes(nums) {
+//     const temp = [];
+//     for (const n of nums) {
+//         if (n != 0)
+//             temp.push(n);
+//     }
 
-    for (let i = 0; i < temp.length; i++) {
-        nums[i] = temp[i];
-    }
+//     for (let i = 0; i < temp.length; i++) {
+//         nums[i] = temp[i];
+//     }
 
-    for (let i = temp.length; i < nums.length; i++) {
-        nums[i] = 0;
-    }
+//     for (let i = temp.length; i < nums.length; i++) {
+//         nums[i] = 0;
+//     }
 
-    return nums;
-}
+//     return nums;
+// }
 
 // optimal
 // function moveZeroes(nums) {
@@ -69,20 +69,42 @@ function moveZeroes(nums) {
 // console.log(moveZeroes([0]));
 // console.log(moveZeroes([-41, 0, -66, 0, -78, 0, 79, 78]));
 
+// function moveZeroes(nums) {
+//     let j = -1;
+
+//     for (let i = 0; i < nums.length; i++) {
+//         if (nums[i] === 0) {
+//             j = i;
+//             break;
+//         }
+//     }
+
+//     if (j === -1) return nums;
+
+//     for (let i = j+1; i < nums.length; i++) {
+//         if(nums[i] != 0) {
+//             nums[j] = nums[i];
+//             nums[i] = 0;
+//             j++;
+//         }
+//     }
+
+//     return nums;
+// }
+
 function moveZeroes(nums) {
     let j = -1;
-
     for (let i = 0; i < nums.length; i++) {
-        if (nums[i] === 0) {
+        if (nums[i] == 0) {
             j = i;
             break;
         }
     }
 
-    if (j === -1) return nums;
+    if (j == -1) return nums;
 
-    for (let i = j+1; i < nums.length; i++) {
-        if(nums[i] != 0) {
+    for (let i = j + 1; i < nums.length; i++) {
+        if (nums[i] != 0) {
             nums[j] = nums[i];
             nums[i] = 0;
             j++;
