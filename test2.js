@@ -1,18 +1,3 @@
-console.time();
-function kthFactor(n, k) {
-    let i = 1;
-    let count = 0;
-
-    while (i<=n) {
-        if(n%i==0) {
-            count++;
-
-            if(count==k) return i;
-        }
-        i++;
-    }
-
-    return -1;
+function merge(nums1, m, num2, n) {
+    
 }
-console.log(kthFactor(42, 8));
-console.timeEnd();
