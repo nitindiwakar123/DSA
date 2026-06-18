@@ -8,3 +8,4 @@
 09/06/2026 - problem1952(Three Divisors), problem1281(Subtract the Product and Sum of Digits of an Integer), problem2520(Count the Digits That Divide a Number), problem3783(Mirror Distance of an Integer), problem9(Palindrome Number)
 12/06/2026 - problem2427(Common Factors)
 15/06/2026 - problem26(Remove Duplicates(Array)), problem1822(Sign of the Product of an Array)
+17/06/2026 - problem283(Move Zeroes)

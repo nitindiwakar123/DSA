@@ -225,4 +225,4 @@ function countSequences(i, nums, k, sum) {
 }
 
 const nums = [3, 1, 2];
-console.log(countSequences(0, nums, 3, 0));
+// console.log(countSequences(0, nums, 3, 0));
