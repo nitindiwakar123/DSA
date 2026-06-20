@@ -5,7 +5,6 @@ class Node {
     }
 }
 
-
 // n1 = new Node(20);
 // n2 = new Node(30);
 // n3 = new Node(40);
@@ -22,14 +21,14 @@ while (temp.next != null) {
     temp = temp.next;
 }
 
-console.log(temp);
+// console.log(temp);
 
 // create function
 function createSinglyLinkedList(values = []) {
     const head = new Node(values[0]);
     let temp = head;
 
-    for (let i = 1; i<values.length; i++) {
+    for (let i = 1; i < values.length; i++) {
         const n = new Node(values[i]);
         temp.next = n;
         temp = temp.next;
@@ -37,3 +36,23 @@ function createSinglyLinkedList(values = []) {
 
     return head;
 }
+
+// access elements in forward direction with recursion
+function printElementForward(head) {
+    if (head == null)
+        return;
+
+    console.log(head.val);
+    printElement(head.next);
+}
+
+// access elements in backward direction with recursion
+// function printElementBackward(head) {
+//     if(head == null)
+//         return;
+
+
+//     console.log(head.val);
+// } 
+
+
