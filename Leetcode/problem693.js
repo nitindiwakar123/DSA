@@ -9,18 +9,43 @@ function decimalToBinary(n) {
     return bin;
 }
 
+// brute
+// function hasAlternatingBits(n) {
+//     bin = decimalToBinary(n);
+//     let lastBit;
+
+//     while (bin.length) {
+//         if (currentBit == lastBit) return false;
+//         let currentBit = bin[bin.length - 1];
+//         lastBit = currentBit;
+//         bin = bin.slice(0, bin.length - 1);
+//     }
+//     return true;
+// }
+
+// better
+// two pointer approach
+// time complexity - O(n logn)
+// function hasAlternatingBits(n) {
+//     let bin = decimalToBinary(n);
+
+//     let i = 0;
+//     for (let j = i + 1; j < bin.length; j++) {
+//         if(bin[i] == bin[j])
+//             return false;
+
+//         i++;
+//     }
+
+//     return true;
+// }
+
+// optimal
 function hasAlternatingBits(n) {
-    bin = decimalToBinary(n);
-    let lastBit;
-    
-    while (bin.length) {
-        let currentBit = bin[bin.length-1];
-        if(currentBit == lastBit) return false;
-        lastBit = currentBit;
-        bin = bin.slice(0, bin.length-1);
-    }
-    return true;
+    let x = n ^ (n >> 1);
+    return (x & (x + 1)) == 0;
 }
+
 
 // Test Cases
 // console.log(hasAlternatingBits(87381));

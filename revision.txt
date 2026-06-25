@@ -10,3 +10,4 @@
 15/06/2026 - problem26(Remove Duplicates(Array)), problem1822(Sign of the Product of an Array)
 17/06/2026 - problem283(Move Zeroes)
 20/06/2026 - problem83(Remove Duplicates from Sorted List), problem141(Linked List Cycle)
+23/06/2026 - problem693(Binary Number with Alternating Bits), problem1342(Number of Steps to Reduce a Number to Zero)

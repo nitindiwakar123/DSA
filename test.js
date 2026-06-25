@@ -1,47 +1,21 @@
-class Node {
-    constructor(data_value) {
-        this.val = data_value;
-        this.next = null;
-        this.prev = null;
-    }
-}
+function minLenSubArray(nums, target) {
+    let minLength = nums.length + 1;
 
-// const head = new Node(10);
+    for (let i = 0; i < nums.length; i++) {
+        let sum = 0;
+        for (let j = i; j >= 0; j--) {
+            sum += nums[j];
 
-// const n1 = new Node(20);
-// const n2 = new Node(30);
-// const n3 = new Node(40);
-// const n4 = new Node(50);
-
-// head.next = n1;
-// n1.next = n2;
-// n1.prev = head;
-
-// n2.next = n3;
-// n2.prev = n1;
-
-// n3.next = n4;
-// n3.prev = n2;
-
-// n4.prev = n3;
-
-function createLinkedList(list) {
-    const head = new Node(list[0]);
-    let temp = head;
-
-    for (let i = 1; i < list.length; i++) {
-        const newNode = new Node(list[i]);
-        newNode.prev = temp;
-        temp.next = newNode;
-        temp = newNode;
+            if (sum >= target) {
+                minLength = Math.min(minLength, i - j + 1);
+                if (minLength == 1) return 1;
+            }
+        }
     }
 
-    return temp;
+    return minLength == nums.length + 1 ? 0 : minLength;
 }
 
-let temp = createLinkedList([1, 2, 3, 4]);
-
-// while (temp != null) {
-//     console.log(temp.val);
-//     temp = temp.prev;
-// }
+// console.log(minLenSubArray([2,3,1,2,4,3], 7));
+// console.log(minLenSubArray([1,1,1,1,1,1,1,1], 11));
+console.log(minLenSubArray([1,2,3,4,5], 11));
