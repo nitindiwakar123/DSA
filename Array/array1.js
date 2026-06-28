@@ -73,11 +73,11 @@ function printSecondLargestElement(arr) {
     console.log("Second Largest Element:", largest === secondLargest ? -1 : secondLargest);
 
 }
+// const arr = [80, 7, 6, 3, 3, 19];
 // printSecondLargestElement(arr);
 
 // Second smallest element in an array
 // const arr = [7, -5, 7];
-// const arr = [27, 30, 30, 57, 7, 6, 3, 3, 19];
 function printSecondSmallestElement(arr) {
     let smallest = arr[0];
     let secondSmallest = arr[0];

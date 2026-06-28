@@ -43,7 +43,7 @@ function printPerfectSquare(n) {
     }
 }
 
-// printPerfectSquare(10);
+// printPerfectSquare(100);
 
 // WAP to print and count all the numbers from 1 to 100 which are perfect square.
 
@@ -212,7 +212,7 @@ function countFactors(n) {
     return count;
 }
 
-console.log(countFactors(5));
+// console.log(countFactors(5));
 
 // WAP to print and count all the factors of a number.
 function printAndCountFactors(n) {

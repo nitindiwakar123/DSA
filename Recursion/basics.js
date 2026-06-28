@@ -45,3 +45,55 @@ function isIncreasing(n) {
 
 let n = 1933;
 // console.log(isIncreasing(n));
+
+// WAP to print square of each numbers from 1 to 100.
+// function printSquare(i, n) {
+//     if(i > n) 
+//         return;
+
+//     console.log(i*i);
+//     printSquare(i+1, n)
+
+// }
+
+// functional approach
+function printSquare(n) {
+    if (n == 1)
+        return n;
+
+    console.log(n * n);
+    return printSquare(n - 1);
+}
+
+// console.log(printSquare(10));
+
+// WAP to print all the numbers from 1 to 100 which are perfect square.
+// function printPerfectSquare(i, n) {
+//     if(i*i > n)
+//         return;
+
+//     console.log(i*i);
+//     printPerfectSquare(i+1, n);
+// }
+
+// WAP to count all the numbers from 1 to 100 which are perfect square.
+function countPerfectSquare(i, n) {
+    if (i * i >= n)
+        return i;
+
+    return countPerfectSquare(i + 1, n);
+}
+
+// console.log(countPerfectSquare(1, 100));
+
+function printCubeOfEach(n) {
+    if (n == 1) {
+        console.log(1);
+        return 1;
+    }
+
+    printCubeOfEach(n - 1);
+    console.log(n * n * n);
+}
+
+// printCubeOfEach(10);

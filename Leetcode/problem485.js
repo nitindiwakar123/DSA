@@ -1,5 +1,4 @@
 // brute
-
 // function findMaxConsecutiveOnes(nums) {
 //     let maxCount = 0;
 //     let count = 0;
@@ -16,7 +15,7 @@
 //     return maxCount;
 // }
 
-// optimal
+// approach 2
 // function findMaxConsecutiveOnes(nums) {
 //     let maxCount = 0;
 //     let left = 0;
@@ -31,10 +30,10 @@
 //             right++;
 //         }
 //     }
-
 //     return maxCount;
 // }
 
+// approach 3
 function findMaxConsecutiveOnes(nums) {
 
     let tempCount = 0;
@@ -54,10 +53,10 @@ function findMaxConsecutiveOnes(nums) {
     return tempCount > maxCount? tempCount: maxCount;
 }
 
-// Time & Space Complexities
+// Time & Space Complexity
 // brute - O(n), S(1)
-// better - O(n), S(1)
-// optimal - O(n), S(1)
+// approach 2 - O(n), S(1)
+// approach 3 - O(n), S(1)
 
 // Test Cases
 // console.log(findMaxConsecutiveOnes([1]));
