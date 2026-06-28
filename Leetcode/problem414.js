@@ -1,3 +1,4 @@
+// brute
 function getThirdMax(nums) {
     let firstMax = Number.MIN_SAFE_INTEGER;
     let secondMax = Number.MIN_SAFE_INTEGER;
@@ -18,6 +19,9 @@ function getThirdMax(nums) {
 
     return thirdMax == Number.MIN_SAFE_INTEGER ? firstMax : thirdMax;
 }
+
+// Time & Space Complexity
+// brute - O(n), S(1)
 
 // Test Cases
 // console.log(getThirdMax([3,2,1]));
