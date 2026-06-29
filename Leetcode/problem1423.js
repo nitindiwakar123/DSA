@@ -21,7 +21,6 @@ function maxScore(cardPoints, k) {
     return maxSum;
 }
 
-
 // TC - O(2*k)
 // SC - O(1)
 

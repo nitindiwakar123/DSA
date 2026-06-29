@@ -1,21 +1,83 @@
-function minLenSubArray(nums, target) {
-    let minLength = nums.length + 1;
+// String
 
-    for (let i = 0; i < nums.length; i++) {
-        let sum = 0;
-        for (let j = i; j >= 0; j--) {
-            sum += nums[j];
+// Reverse each word
+function reverseEachWord(s) {
+    let temp = "";
+    let result = "";
 
-            if (sum >= target) {
-                minLength = Math.min(minLength, i - j + 1);
-                if (minLength == 1) return 1;
-            }
+    for (let i = 0; i < s.length; i++) {
+        let char = s.charAt(i);
+        if(char != " ")
+            temp = char+temp;
+
+        if((char == " " || i == s.length-1) && temp.length > 0) {
+            result = `${result} ${temp}`;
+            temp = "";
         }
     }
 
-    return minLength == nums.length + 1 ? 0 : minLength;
+    return result.trimStart();
 }
 
-// console.log(minLenSubArray([2,3,1,2,4,3], 7));
-// console.log(minLenSubArray([1,1,1,1,1,1,1,1], 11));
-console.log(minLenSubArray([1,2,3,4,5], 11));
+// Reverse sequence of words
+function reverseSequence(s) {
+    let temp = "";
+    let result = "";
+
+    for (let i = 0; i < s.length; i++) {
+        let char = s.charAt(i);
+        if(char != " ")
+            temp = temp+char;
+
+        if((char == " " || i == s.length-1) && temp.length > 0) {
+            result = `${temp} ${result}`;
+            temp = "";
+        }
+    }
+
+    return result.trimStart();
+}
+
+// get the biggest word
+function getBiggestWord(s) {
+    let temp = "";
+    let biggest = "";
+
+    for (let i = 0; i<s.length; i++) {
+        let c = s[i];
+
+        if(c != " ")
+            temp = temp + c;
+
+        if(c == " " || i == s.length - 1) {
+            if(temp.length > biggest.length)
+                biggest = temp
+        
+        temp = ""
+        }
+    }
+
+    return biggest;
+}
+
+// get the length of biggest word
+function getBiggestWordLength(s) {
+    let count = 0;
+    let maxLength = 0;
+
+    for (let i = 0; i<s.length; i++) {
+        let c = s[i];
+
+        if(c != " ")
+            count++;
+
+        if(c == " " || i == s.length - 1) {
+            maxLength = Math.max(maxLength, count);
+            count = 0;
+        }
+    }
+
+    return maxLength;
+}
+
+console.log(getBiggestWordLength("we are the biggest"));
