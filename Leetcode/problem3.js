@@ -23,7 +23,6 @@ function lengthOfLongestSubstring(s) {
 // better
 // time - O(n+k)
 // space - O(1)
-
 function lengthOfLongestSubstring(s) {
     const n = s.length;
     let left = 0;
@@ -42,7 +41,6 @@ function lengthOfLongestSubstring(s) {
 
     return maxLen;
 }
-
 
 // optimal - with hashing
 // time - O(n)
