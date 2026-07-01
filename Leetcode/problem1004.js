@@ -36,6 +36,9 @@
 //     return maxOnes;
 // }
 
+// better
+// time - O(n+n) = O(2n)
+// space - O(1)
 function longestOnes(nums, k) {
     let maxOnes = 0;
     let l = 0;
@@ -46,20 +49,43 @@ function longestOnes(nums, k) {
         if (nums[r] == 0)
             zeroes++;
 
+        while (zeroes > k) {
+            if (nums[l] == 0) zeroes--;
+            l++;
+        }
+
         if (zeroes <= k) {
             maxOnes = Math.max(maxOnes, r - l + 1);
-        } else {
-            while (nums[l] != 0)
-                l++;
-
-            l++;
-            zeroes--;
         }
         r++;
     }
 
     return maxOnes;
 }
+ 
+// optimal
+// time - O(n)
+// space - O(1)
+// function longestOnes(nums, k) {
+//     let maxOnes = 0;
+//     let l = 0;
+//     let r = 0;
+//     let zeroes = 0;
+
+//     while (r < nums.length) {
+//         if (nums[r] == 0) zeroes++;
+
+//         if (zeroes > k) {
+//             if (nums[l] == 0) zeroes--;
+//             l++;
+//         } else {
+//             maxOnes = Math.max(maxOnes, r - l + 1);
+//         }
+//         r++;
+//     }
+
+//     return maxOnes;
+// }
 
 // Test Cases
 // console.log(longestOnes([0], 1));
@@ -73,4 +99,4 @@ function longestOnes(nums, k) {
 // console.log(longestOnes([1,1,1,0,0,0,1,1,1,1,0], 2));
 // console.log(longestOnes([1, 1, 1, 1], 2));
 // console.log(longestOnes([1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0], 2));
-console.log(longestOnes([0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1], 3));
+// console.log(longestOnes([0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1], 3));
