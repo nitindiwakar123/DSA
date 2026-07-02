@@ -2,6 +2,7 @@ function deleteDuplicates(head) {
     let temp = head;
     let duplicateVal = 0;
     let isAnyDistinct = false;
+    
     while (temp != null && temp.next != null) {
         if (temp.val == temp.next.val) {
             duplicateVal = temp.val;

@@ -28,10 +28,10 @@ function getSubsets(idx, temp, nums, list) {
     return list;
 }
 
-// const nums = [1, 2, 3];
+const nums = [1, 2, 3];
 // const nums = [0];
 // const nums = [1,2];
 // const nums = [];
-const nums = [-1,0,1];
+// const nums = [-1,0,1];
 // const nums = [-1,-2];
 console.log(getSubsets(0, [], nums, []));

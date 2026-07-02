@@ -44,7 +44,7 @@ function lengthOfLongestSubstring(s) {
 
 // optimal - with hashing
 // time - O(n)
-// space - Object(256)
+// space - O(256)
 function lengthOfLongestSubstring(s) {
     const n = s.length;
     const hash = new Array(255).fill(-1);
