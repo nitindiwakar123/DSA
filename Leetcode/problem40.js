@@ -1,27 +1,22 @@
-function getCombinations(idx, temp, list, candidates, target) {
-    if (target == 0) {
-        list.push([...temp]);
-        return;
-    }
+// optimal
+function backtrack(start, temp, list, candidates, remain) {
+    if(remain == 0) list.push([...temp]);
 
-    for (let i = idx; i < candidates.length; i++) {
-        if (i > idx && candidates[i] == candidates[i - 1]) continue;
-        if (candidates[i] > target) break;
+    for (let i = start; i < candidates.length; i++) {
+        if(i > start && candidates[i] == candidates[i-1]) continue;
+        if(candidates[i] > remain) break;
 
         temp.push(candidates[i]);
-        getCombinations(i + 1, temp, list, candidates, target - candidates[i]);
+        backtrack(i+1, temp, list, candidates, remain-candidates[i]);
         temp.pop();
     }
-
-    return list;
 }
 
 function combinationSum2() {
     const candidates = [10, 1, 2, 7, 6, 1, 5];
     candidates.sort((a, b) => a - b);
-    console.log(candidates);
-    // const candidates = [1, 1, 1, 2, 2];
-    const list = getCombinations(0, [], [], candidates, 8);
+    const list = [];
+    backtrack(0, [], list, candidates, 8);
 
     return list;
 }
