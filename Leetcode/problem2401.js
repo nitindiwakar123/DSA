@@ -22,7 +22,9 @@
 //     return maxLength;
 // }
 
-// better
+// optimal
+// Time - O(n)
+// Space - O(1)
 function longestNiceSubarray(nums) {
     let maxLength = 1;
     let l = 0;
