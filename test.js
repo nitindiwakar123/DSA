@@ -80,4 +80,26 @@ function getBiggestWordLength(s) {
     return maxLength;
 }
 
-console.log(getBiggestWordLength("we are the biggest"));
+// console.log(getBiggestWordLength("we are the biggest"));
+
+function checkIsPasswordValid(pwd) {
+    if(pwd.length < 8) return false;
+
+    let uppercase = false, lowercase = false, digit = false, specialChar = false;
+    for (let i = 0; i<pwd.length; i++) {
+        const char = pwd[i];
+
+        if(char >= 'A' && char <= 'Z')
+            uppercase = true;
+        else if(char >= 'a' && char <= 'z')
+            lowercase = true;
+        else if (char >= '0' && char <= '9')
+            digit = true;
+        else
+            specialChar = true
+    }
+
+    return uppercase && lowercase && digit && specialChar;
+}
+
+checkIsPasswordValid("Mohan@123");

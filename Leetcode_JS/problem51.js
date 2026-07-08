@@ -3,35 +3,36 @@
 // brute
 // Time - O(n) + O(n) + O(n) + O(n) - O(4n)
 // Space - O(n*n) 
-function isSafe(col, row, board, n) {
-    let tempRow = row;
-    let tempCol = col;
+// function isSafe(col, row, board, n) {
+//     let tempRow = row;
+//     let tempCol = col;
 
-    while (row >= 0 && col >= 0) {
-        if (board[row][col] == "Q") return false;
-        row--;
-        col--;
-    }
+//     while (row >= 0 && col >= 0) {
+//         if (board[row][col] == "Q") return false;
+//         row--;
+//         col--;
+//     }
 
-    row = tempRow;
-    col = tempCol;
+//     row = tempRow;
+//     col = tempCol;
 
-    while (col >= 0) {
-        if (board[row][col] == "Q") return false;
-        col--;
-    }
+//     while (col >= 0) {
+//         if (board[row][col] == "Q") return false;
+//         col--;
+//     }
 
-    col = tempCol;
+//     col = tempCol;
 
-    while (row <= n - 1 && col >= 0) {
-        if (board[row][col] == "Q") return false;
-        row++;
-        col--;
-    }
+//     while (row <= n - 1 && col >= 0) {
+//         if (board[row][col] == "Q") return false;
+//         row++;
+//         col--;
+//     }
 
-    return true;
-}
+//     return true;
+// }
 
+// take column as pointer index
 // function backtrack(col, board, ans, n) {
 //     if (col == n) {
 //         ans.push(board.map(r => r.join("")));
@@ -47,15 +48,65 @@ function isSafe(col, row, board, n) {
 //     }
 // }
 
+// take row as pointer index
+// function isSafe(col, row, board, n) {
+//     let tempRow = row;
+//     let tempCol = col;
+
+//     while (row >= 0 && col >= 0) {
+//         if (board[row][col] == "Q") return false;
+//         row--;
+//         col--;
+//     }
+
+//     row = tempRow;
+//     col = tempCol;
+
+//     while (row >= 0) {
+//         if (board[row][col] == "Q") return false;
+//         row--;
+//     }
+
+//     row = tempRow;
+
+//     while (row >= 0 && col <= n-1) {
+//         if (board[row][col] == "Q") return false;
+//         row--;
+//         col++;
+//     }
+
+//     return true;
+// }
+
+// function backtrack(row, board, ans, n) {
+//     if (row == n) {
+//         ans.push(board.map(r => r.join("")));
+//         return
+//     }
+
+//     for (let col = 0; col < n; col++) {
+//         if(!(isSafe(col, row, board, n))) continue;
+
+//         board[row][col] = "Q";
+//         backtrack(row+1, board, ans, n);
+//         board[row][col] = ".";
+//     }
+    
+// }
+
 // function solveNQueens(n) {
 //     const ans = [];
 //     const board = Array.from({ length: n }, () => Array(n).fill('.'));
 //     backtrack(0, board, ans, n);
 //     return ans;
 // }
+// solveNQueens(4)
+// console.log(solveNQueens(4));
 
 
 // optimal with hashing
+// Time - O(n)
+// Space - O(n*n) + O(n) + O(2*n-1) + O(2*n-1) 
 function backtrack(col, board, ans, leftRow, lowerDiagonal, upperDiagonal, n) {
     if (col == n) {
         ans.push(board.map(r => r.join("")));
@@ -86,4 +137,4 @@ function solveNQueens(n) {
     backtrack(0, board, ans, leftRow, lowerDiagonal, upperDiagonal, n);
     return ans;
 }
-console.log(solveNQueens(4));
+// console.log(solveNQueens(4));
