@@ -12,7 +12,7 @@ function sumOfUnique(nums) {
         }
     }
 
-    const freq = new Array(max + 1).fill(0);
+    const freq = new Array(max+1).fill(0);
     let sum = 0;
 
     for (const num of nums) {
