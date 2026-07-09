@@ -102,4 +102,4 @@ function checkIsPasswordValid(pwd) {
     return uppercase && lowercase && digit && specialChar;
 }
 
-checkIsPasswordValid("Man@123");
+// checkIsPasswordValid("Man@123");
