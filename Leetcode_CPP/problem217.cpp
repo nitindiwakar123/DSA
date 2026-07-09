@@ -15,7 +15,7 @@ int getLongestSubstring(string str) {
             left = hashmap[str[right]] + 1;
         }
 
-        cout<<hashmap<<endl;
+        // cout<<hashmap<<endl;
         int tempLen = right-left+1;
         if(tempLen > maxLen) {
             maxLen = tempLen;
