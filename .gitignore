@@ -1,5 +1,19 @@
-*.exe
-*.o
-*.obj
+# Default GCC output
+**/a.out
+
+# Common executable names
+**/*.out
+
+# Object files
+**/*.o
+
+# Static/shared libraries
+**/*.a
+**/*.so
+
+# Build directories
+**/build/
+**/cmake-build-*/
+
 resources
 revision.txt
