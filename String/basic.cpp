@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stdio.h>
+#include <vector>
 using namespace std;
 
 void reverseStr(string &str)
@@ -154,8 +155,8 @@ int countToMakeValid(string s)
 void rotateClockwise(string &s)
 {
     int n = s.size();
-    char c1 = s[n-2];
-    char c2 = s[n-1];
+    char c1 = s[n - 2];
+    char c2 = s[n - 1];
     for (int i = n - 3; i >= 0; i--)
     {
         s[i + 2] = s[i];
@@ -173,8 +174,8 @@ void rotateAntiClockwise(string &s)
     {
         s[i - 2] = s[i];
     }
-    s[n-2] = c1;
-    s[n-1] = c2;
+    s[n - 2] = c1;
+    s[n - 1] = c2;
 }
 
 bool isRotated(string &s1, string &s2)
@@ -191,8 +192,32 @@ bool isRotated(string &s1, string &s2)
     // rotateAntiClockwise(antiClockwise);
     if (antiClockwise == s2)
         return true;
-    
+
     return false;
+}
+
+string sortString(string &s)
+{
+    int n = s.size();
+    vector<int> hash(26, 0);
+
+    for (int i = 0; i < n; i++)
+    {
+        hash[s[i] - 'a']++;
+    }
+
+    s = "";
+    for (int i = 0; i < 26; i++)
+    {
+        while (hash[i] > 0)
+        {
+            char c = i + 'a';
+            s += c;
+            hash[i]--;
+        }
+    }
+   
+    return s;
 }
 
 int main()
@@ -203,10 +228,13 @@ int main()
     // getline(cin, str);
     // cout<<str<<endl;
 
-    string s1 = "amazon", s2 = "azonam";
-    bool res = isRotated(s1, s2);
+    // string s1 = "amazon", s2 = "azonam";
+    // bool res = isRotated(s1, s2);
+    // cout << res << endl;
+
+    string s1 = "aaaaedddddcab";
+    string res = sortString(s1);
     cout << res << endl;
-    
 
     // cout << res << endl;
     // cout << res2 << endl;
