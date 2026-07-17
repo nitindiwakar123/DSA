@@ -3,7 +3,6 @@
 // brute - this will not run on leetcode
 // function maxArea(height) {
 //     let max = 0;
-//     let shortLine = 0;
 
 //     for (let i = 0; i < height.length; i++) {
 //         for (let j = i + 1; j < height.length; j++) {
@@ -12,9 +11,6 @@
 //             const res = width * minHeight
 //             if(max < res) {
 //                 max = res;
-//             } else {
-//                 shortLine = minHeight;
-
 //             }
 //         }
 //     }
@@ -23,6 +19,8 @@
 // }
 
 // optimal - two pointers(opposite end)
+// time complexity - O(n)
+// space complexity - O(1)
 function maxArea(height) {
     let max = 0;
     let i = 0;
@@ -44,11 +42,8 @@ function maxArea(height) {
     return max;
 }
 
-// time complexity - O(n)
-// space complexity - O(1)
-
 // Test Cases
-// console.log(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]));
+console.log(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]));
 // console.log(maxArea([1, 1]));
 // console.log(maxArea([1,2,3,4,5]));
 // console.log(maxArea([5,4,3,2,1]));
