@@ -71,14 +71,14 @@ using namespace std;
 //     return ans;
 // }
 
-void backtrack(int col, vector<int> &lowerDiagonal, vector<int> &upperDiagonal, vector<int> &leftRow, vector<string> &board, vector<vector<string>> &ans, int n)
+int backtrack(int col, vector<int> &lowerDiagonal, vector<int> &upperDiagonal, vector<int> &leftRow, vector<string> &board, int n)
 {
     if (col == n)
     {
-        ans.push_back(board);
-        return;
+        return 1;
     }
 
+    int count = 0;
     for (int row = 0; row < n; row++)
     {
         if (leftRow[row] == 1 || lowerDiagonal[row + col] == 1 || upperDiagonal[n - 1 + col - row] == 1)
@@ -87,37 +87,29 @@ void backtrack(int col, vector<int> &lowerDiagonal, vector<int> &upperDiagonal, 
         lowerDiagonal[row + col] = 1;
         upperDiagonal[(n - 1) + (col - row)] = 1;
         leftRow[row] = 1;
-        backtrack(col + 1, lowerDiagonal, upperDiagonal, leftRow, board, ans, n);
+        count += backtrack(col + 1, lowerDiagonal, upperDiagonal, leftRow, board, n);
         board[row][col] = '.';
         lowerDiagonal[row + col] = 0;
         upperDiagonal[(n - 1) + (col - row)] = 0;
         leftRow[row] = 0;
     }
+
+    return count;
 }
 
-vector<vector<string>> solveNQueens(int n)
+int solveNQueens(int n)
 {
     vector<string> board(n, string(n, '.'));
-    vector<vector<string>> ans;
     vector<int> upperDiagonal(2*n - 1, 0), lowerDiagonal(2*n - 1, 0), leftRow(n);
-    backtrack(0, lowerDiagonal, upperDiagonal, leftRow, board, ans, n);
+    int res = backtrack(0, lowerDiagonal, upperDiagonal, leftRow, board, n);
 
-    return ans;
+    return res;
 }
 
 int main()
 {
-    vector<vector<string>> res = solveNQueens(4);
-
-    for (const auto &row : res)
-    {
-        // Inner loop iterates through each integer in that row
-        for (string val : row)
-        {
-            std::cout << val << " ";
-        }
-        std::cout << "\n";
-    }
+    int res = solveNQueens(4);
+    cout<<res<<endl;
 
     return 0;
 }

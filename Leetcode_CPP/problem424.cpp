@@ -32,6 +32,37 @@ using namespace std;
 //     return maxLength;
 // }
 
+// better
+// time - O(n+n) * 26
+// space - O(26)
+// int characterReplacement(string s, int k)
+// {
+//     int n = s.size();
+//     vector<int> hash(26, 0);
+//     int maxLength = 0, maxFreq = 0, left = 0, right = 0;
+
+//     while (right < n)
+//     {
+//         hash[s[right] - 'A']++;
+//         maxFreq = max(maxFreq, hash[s[right] - 'A']);
+
+//         while (((right - left + 1) - maxFreq) > k)
+//         {
+//             hash[s[left] - 'A']--;
+//             left++;
+//             maxFreq = 0;
+//             for (int i = 0; i < hash.size(); i++)
+//                 maxFreq = max(maxFreq, hash[i]);
+//         }
+
+//         maxLength = max(maxLength, right - left + 1);
+//         right++;
+//     }
+
+//     return maxLength;
+// }
+
+// time - O(n)
 // space - O(26)
 int characterReplacement(string s, int k)
 {
@@ -39,33 +70,28 @@ int characterReplacement(string s, int k)
     vector<int> hash(26, 0);
     int maxLength = 0, maxFreq = 0, left = 0, right = 0;
 
-    while (right<n)
+    while (right < n)
     {
-        hash[s[right]-'A']++;
-        maxFreq = max(maxFreq, hash[s[right]]);
+        hash[s[right] - 'A']++;
+        maxFreq = max(maxFreq, hash[s[right] - 'A']);
 
-        int changes = (right-left+1)+maxFreq;
-        while (changes > k)
+        if ((right - left + 1) - maxFreq > k)
         {
-            int tempMax = 0;
-            hash[s[left]-'A']--;    
-            tempMax = max(tempMax, hash[s[left]]);
-            changes = (right-left+1)+tempMax;
+            hash[s[left] - 'A']--;
             left++;
         }
-        
-        maxLength = max(maxLength, right-left+1);
+
+        maxLength = max(maxLength, right - left + 1);
         right++;
     }
-    
 
     return maxLength;
 }
 
 int main()
 {
-    string s = "AABABBA";
-    int res = characterReplacement(s, 1);
-    cout<<res<<endl;
+    string s = "ABAB";
+    int res = characterReplacement(s, 2);
+    cout << res << endl;
     return 0;
 }
