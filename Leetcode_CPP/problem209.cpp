@@ -52,6 +52,8 @@ int minSubArrayLen(int target, vector<int> &nums)
     return minLength == n+1? 0: minLength;
 }
 
+
+
 int main()
 {
     vector<int> nums = {0, 0, 0};

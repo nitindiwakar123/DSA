@@ -56,6 +56,7 @@ int totalFruit(vector<int> &fruits)
     return maxLength;
 }
 
+
 int main()
 {
     vector<int> nums = {0, 1, 2, 2};
