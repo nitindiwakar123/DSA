@@ -1,17 +1,16 @@
-function rotatebyk(nums, k) {
-    const n = nums.length;
-    const ans = new Array(n).fill(-1);
-
-    for (let i = 0; i < n-k; i++)
-    {
-        ans[i+k] = nums[i];
+let promise = new Promise((resolve, reject) => {
+    if(false) {
+        setTimeout(() => {
+            resolve("Resolved");
+        }, 1000);
+    } else {
+        reject("something went wrong")
     }
+});
 
-    for(let i = 0; i < k;i++) {
-        ans[i] = nums[(n-k)+i];
-    }
+promise.then((value) => {
+    console.log(value);
     
-    return ans;
-}
-
-rotatebyk([1, 2, 3, 4, 5, 6, 7], 3);
+}).catch((reason) => {
+    console.log(reason);
+});

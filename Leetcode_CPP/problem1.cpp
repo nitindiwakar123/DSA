@@ -45,6 +45,25 @@ vector<int> twoSum(vector<int>& nums, int target) {
     return {-1, -1};
 }
 
+vector<int> twoSum(vector<int>& nums, int target) {
+        int n = nums.size();
+        int left = 0, right = n - 1;
+
+        while (left < right) {
+            long current = nums[left] + nums[right];
+
+            if (current == target)
+                return {left, right};
+
+            if (current < target)
+                left++;
+            else
+                right++;
+        }
+
+        return {-1, -1};
+    }
+
 int main() {
     vector<int> arr = {2,7,11,15};
 
